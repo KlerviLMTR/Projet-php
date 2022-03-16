@@ -1,7 +1,5 @@
 <?php
 
-
-
     foreach($resultat as $match){
 
         $id_m = $match['Id_match_'];
@@ -30,9 +28,9 @@
 
        echo '
         <div class="footer">
-            <a href="../ajout_modif/formulaire.php?v1='.$match["Id_match_"].'&v2='.$match["date_match"].'&v3='.$match["heure_match"].'&v4='.$match["lieu"].'&v5='.$match["score_equipe"].'&v6='.$match["score_adverse"].'
+            <a href="./match_formulaire.php?v1='.$match["Id_match_"].'&v2='.$match["date_match"].'&v3='.$match["heure_match"].'&v4='.$match["lieu"].'&v5='.$match["score_equipe"].'&v6='.$match["score_adverse"].'
             ">✎</a>
-            <a href="./joueurs.php?idsupp='.$match["Id_match_"].'">🗑</a>
+            <a href="./matchs.php?idsupp='.$match["Id_match_"].'">🗑</a>
         </div>
 
         ';

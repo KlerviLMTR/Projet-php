@@ -11,7 +11,7 @@
 
 
     <h1>Liste des matchs</h1>
-    <a href="./formulaire.php">Lien pour ajouter un match</a>
+    <a href="./match_formulaire.php">Lien pour ajouter un match</a>
     <?php
         include_once('../config.php');
 
