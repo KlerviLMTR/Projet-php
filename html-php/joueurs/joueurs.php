@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../../css-scss/template.css">
     <style>
         #ligne_grille{
             margin-bottom: 20px;
@@ -53,6 +54,35 @@
     </style>
 </head>
 <body>
+
+<!-- HEADER -->
+<nav>
+        <a href="../index.php" id="lien-logo">
+            <img src="../../images-deco/logo.svg" id="logo" alt="logo Tutshill Tornados">
+        </a>
+
+        <div id="nav_cont">
+            <a href="./joueurs.php" class ="lien-nav">
+                <img src="../../images-deco/people.svg"class="icone" alt="icone joueurs">
+                <p>Joueurs</p>
+            </a>
+
+            <a href="../match/matchs.php" class ="lien-nav">
+                <img src="../../images-deco/agenda.svg"class="icone" alt="icone matchs">
+                <p>Matchs</p>
+            </a>
+            <a href="" class ="lien-nav">
+                <img src="../../images-deco/leaderboard.svg"class="icone" alt="icone stats">
+                <p>Statistiques</p>
+            </a>
+
+            <a href="" class ="lien-nav">
+                <img src="../../images-deco/logout.svg"class="icone" alt="icone logout">
+                <p>Se déconnecter</p>
+            </a>
+        </div>
+
+    </nav>
 
     <h1>Liste des joueurs :</h1>
     <a href="../ajout_modif/formulaire.php">Lien pour ajouter un joueur</a>
