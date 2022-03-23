@@ -83,27 +83,29 @@
         </div>
 
     </nav>
-
-    <h1>Liste des joueurs :</h1>
-    <a href="../ajout_modif/formulaire.php">Lien pour ajouter un joueur</a>
-    <?php
-        include_once('../config.php');
-
-        //Vérfier si un joueur a été supprimé:
-        include_once('./suppression_joueur.php');
-
-        //Récupérer toutes les données nécessaires à l'affichage des joueurs:
-        $sql = "select * from joueur ";
-        $prep = $pdo->prepare($sql);
-        $prep -> execute();
-        $resultat = $prep->fetchAll();
     
-        //Affichage des joueurs :
-        include_once('affichage_joueurs.php');
+    <main>
+
+        <h1>Liste des joueurs :</h1>
+        <a href="../ajout_modif/formulaire.php">Lien pour ajouter un joueur</a>
+        <?php
+            include_once('../config.php');
+
+            //Vérfier si un joueur a été supprimé:
+            include_once('./suppression_joueur.php');
+
+            //Récupérer toutes les données nécessaires à l'affichage des joueurs:
+            $sql = "select * from joueur ";
+            $prep = $pdo->prepare($sql);
+            $prep -> execute();
+            $resultat = $prep->fetchAll();
         
-    
-    ?>
-
+            //Affichage des joueurs :
+            include_once('affichage_joueurs.php');
+            
+        
+        ?>
+    </main>
 
     
 
