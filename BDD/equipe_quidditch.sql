@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mer. 23 mars 2022 à 15:21
+-- Généré le : ven. 25 mars 2022 à 20:54
 -- Version du serveur : 10.6.5-MariaDB
 -- Version de PHP : 7.4.26
 
@@ -38,7 +38,9 @@ CREATE TABLE IF NOT EXISTS `authentification` (
 --
 
 INSERT INTO `authentification` (`identifiant`, `mdp`) VALUES
-('a', '1');
+('a', 'c4ca4238a0b923820dcc509a6f75849b'),
+('b', '1'),
+('b', '1');
 
 -- --------------------------------------------------------
 
@@ -60,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `joueur` (
   `statut` varchar(50) DEFAULT NULL,
   `commentaires` text DEFAULT NULL,
   PRIMARY KEY (`Id_joueur`)
-) ENGINE=MyISAM AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb3;
+) ENGINE=MyISAM AUTO_INCREMENT=46 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `joueur`
@@ -84,7 +86,8 @@ INSERT INTO `joueur` (`Id_joueur`, `nom`, `prenom`, `numero_licence`, `date_nais
 (41, 'Parker', 'Sona', 54789658, '1997-05-09', '../../photos/demelza_robbins.jpg', 160, 60.0, 'batteur', NULL, NULL),
 (42, 'Ploufle', 'Isabelle', 54789745, '1987-11-26', '../../photos/ginny_weasley.jpg', 158, 62.0, 'batteur', NULL, NULL),
 (43, 'Xerath', 'Ludovic', 54789654, '2000-04-23', '../../photos/fred_weasley.jpg', 200, 87.0, 'poursuiveur', NULL, NULL),
-(44, 'Salvador', 'Stanislas', 54789653, '2003-05-22', '../../photos/oliver_wood.jpg', 189, 69.0, 'poursuiveur', NULL, NULL);
+(44, 'Salvador', 'Stanislas', 54789653, '2003-05-22', '../../photos/oliver_wood.jpg', 189, 69.0, 'poursuiveur', NULL, NULL),
+(45, 'Cobra', 'Jean', 21547896, '1999-12-12', '../../photos/ron_weasley.jpg', 189, 78.0, 'attrapeur', NULL, NULL);
 
 -- --------------------------------------------------------
 
