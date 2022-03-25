@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    if ($_SESSION["connecte"] != "oui") {
+        header("location:../index.php");
+    }
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +17,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="../../css-scss/template.css">
     <style>
+
+
         #ligne_grille{
             margin-bottom: 20px;
             display: grid;
@@ -85,6 +97,10 @@
     </nav>
     
     <main>
+
+    <!-- à refactorer -->
+    <a href="../deconnexion.php">Se déconnecter</a>
+
 
         <h1>Liste des joueurs :</h1>
         <a href="../ajout_modif/formulaire.php">Lien pour ajouter un joueur</a>

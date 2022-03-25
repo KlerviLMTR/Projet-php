@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tutshill Tornados</title>
     <link rel="stylesheet" href="../css-scss/template.css">
 </head>
 <body>
+
     <!-- HEADER -->
-    <nav>
+    <!-- <nav>
         <a href="#" id="lien-logo">
             <img src="../images-deco/logo.svg" id="logo" alt="logo Tutshill Tornados">
         </a>
@@ -35,25 +36,58 @@
             </a>
         </div>
 
-    </nav>
+    </nav> -->
+
+    <main>
+        <!-- Authentification -->
+        <form action='' method='post'>
+        <fieldset>
+            <legend align="left"> Connexion </legend>
+            Identifiant :
+            <input type='text' name ='identifiant' value="">
+            <br>
+            Mot de passe : 
+            <input type='text' name='mdp' value="">
+            <br>
+            <input type='submit' name ='valider' class='button'>
+        </fieldset>
+    </form>
+    </main>
+   
     <?php
-        include_once('config.php');
 
-        $sql = "select * from joueur ";
-        $prep = $pdo->prepare($sql);
-        $prep -> execute();
-        $resultat = $prep->fetchAll();
+        session_start();
 
-        foreach($resultat as $joueur){
-            echo '<img src ="'.$joueur['chemin_photo'].'">';
+        if (isset($_POST['valider'])) {
+
+            $identifiant = $_POST["identifiant"];
+            $post_mdp = md5($_POST["mdp"]);
+            $erreur = "";
+
+            //Connexion à la BDD
+            include_once('config.php');
+
+            //Anthentification
+            $req = "select * from authentification where identifiant=:identifiant and mdp =:post_mdp;";
+            $res = $pdo->prepare($req);       
+            $res->execute(array('identifiant' => $identifiant, 'post_mdp' => $post_mdp));
+            $utilisateur = $res->fetchAll();
+
+            if (count($utilisateur) > 0) {
+                $_SESSION['connecte'] = "oui";
+                header("location:./joueurs/joueurs.php"); 
+            } else {
+                $erreur = "Mauvais identifiant ou mot de passe.";
+                echo $erreur;
+            }
         }
+        ?>
 
-        // echo '
-        //     <img src="./photos/fred_weasley.jpg">
-        // ';
-    
-    ?>
+
+  
 
 
 </body>
 </html>
+
+               
