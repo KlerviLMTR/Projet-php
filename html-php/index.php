@@ -47,7 +47,7 @@
             <input type='text' name ='identifiant' value="">
             <br>
             Mot de passe : 
-            <input type='text' name='mdp' value="">
+            <input type='password' name='mdp' value="">
             <br>
             <input type='submit' name ='valider' class='button'>
         </fieldset>
