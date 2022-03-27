@@ -1,9 +1,6 @@
 <?php
-    session_start();
-    if ($_SESSION["connecte"] != "oui") {
-        header("location:../index.php");
-    }
-
+    include(session.php);
+    verification_session();
 ?>
 
 
