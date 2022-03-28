@@ -38,6 +38,7 @@
             <a href="./match_formulaire.php?v1='.$match["Id_match_"].'&v2='.$match["date_match"].'&v3='.$match["heure_match"].'&v4='.$match["lieu"].'&v5='.$match["score_equipe"].'&v6='.$match["score_adverse"].'&v7='.$match["equipe_adverse"].'
             ">✎</a>
             <a href="./matchs.php?idsupp='.$match["Id_match_"].'">🗑</a>
+            <a href="../selections/selection_match.php?idmatch='.$match["Id_match_"].'">Ajout d\'une sélection</a>
         </div>
 
         ';

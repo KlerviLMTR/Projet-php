@@ -39,6 +39,8 @@
     </nav>
     
     <main>
+        <a href="../selections/selection_match.php">Lien pour préparer les sélections</a>
+        
         <h1>Liste des matchs</h1>
         <a href="./match_formulaire.php">Lien pour ajouter un match</a>
         <?php
