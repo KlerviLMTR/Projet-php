@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 25 mars 2022 à 20:54
+-- Généré le : lun. 28 mars 2022 à 11:56
 -- Version du serveur : 10.6.5-MariaDB
 -- Version de PHP : 7.4.26
 
@@ -69,10 +69,8 @@ CREATE TABLE IF NOT EXISTS `joueur` (
 --
 
 INSERT INTO `joueur` (`Id_joueur`, `nom`, `prenom`, `numero_licence`, `date_naissance`, `chemin_photo`, `taille`, `poids`, `poste_prefere`, `statut`, `commentaires`) VALUES
-(24, 'Weasley', 'George', 4524, '2022-03-18', '../../photos/george_weasley.jpg', 180, 75.0, 'batteur', NULL, NULL),
-(28, 'MonChéri', 'Augustin', 245638, '2020-09-04', '../../photos/oliver_wood.jpg', 190, 60.0, 'gardien', NULL, NULL),
-(29, 'MonPtitChat', 'Yohann', 123554, '2022-03-24', '../../photos/ron_weasley.jpg', 180, 75.0, 'poursuiveur', NULL, NULL),
-(30, 'Egerg', 'Eggegr', 22547851, '2003-01-23', '../../photos/cormac_mclaggen.jpg', 169, 80.0, 'attrapeur', NULL, NULL),
+(24, 'Weasley', 'George', 45244568, '2022-03-18', '../../photos/george_weasley.jpg', 180, 75.0, 'batteur', NULL, NULL),
+(30, 'Egerg', 'Edgar', 22547851, '2003-01-23', '../../photos/cormac_mclaggen.jpg', 169, 80.0, 'attrapeur', NULL, NULL),
 (31, 'Kenobi', 'Jean', 58746985, '1992-12-18', '../../photos/harry_potter.jpg', 174, 67.0, 'gardien', NULL, NULL),
 (32, 'Ciboulette', 'Jardinet', 54712369, '1965-08-24', '../../photos/oliver_wood.jpg', 189, 76.0, 'batteur', NULL, NULL),
 (33, 'Anna', 'Bonnemaison', 36874259, '2000-02-01', '../../photos/ginny_weasley.jpg', 165, 54.0, 'batteur', NULL, NULL),
@@ -112,11 +110,11 @@ CREATE TABLE IF NOT EXISTS `match_` (
 --
 
 INSERT INTO `match_` (`Id_match_`, `date_match`, `heure_match`, `equipe_adverse`, `lieu`, `score_equipe`, `score_adverse`) VALUES
-(6, '2022-03-02', '18:43:00', 'sqd', 'exterieur', NULL, NULL),
-(5, '2022-03-10', '18:05:00', 'egerg', 'domicile', NULL, NULL),
-(7, '2022-03-02', '18:43:00', 'sqd', 'exterieur', NULL, NULL),
-(8, '2022-03-02', '18:43:00', 'sqd', 'exterieur', NULL, NULL),
-(9, '2022-03-02', '18:43:00', 'sqd', 'exterieur', NULL, NULL),
+(6, '2021-01-02', '20:00:00', 'Harpies de Holyhead', 'exterieur', 150, 7),
+(5, '2021-05-03', '18:00:00', 'Harpies de Holyhead', 'domicile', 64, 189),
+(7, '2022-01-02', '20:00:00', 'Harpies de Holyhead', 'exterieur', 90, 90),
+(8, '2022-02-02', '20:00:00', 'Flèches d\'Appleby', 'exterieur', 45, 40),
+(9, '2022-03-02', '18:43:00', 'Flèches d\'Appleby', 'exterieur', 0, 150),
 (10, '2022-03-02', '18:43:00', 'sqd', 'exterieur', NULL, NULL),
 (11, '2022-03-02', '18:43:00', 'sqd', 'exterieur', NULL, NULL);
 
@@ -135,6 +133,26 @@ CREATE TABLE IF NOT EXISTS `participer` (
   PRIMARY KEY (`Id_joueur`,`Id_match_`),
   KEY `Id_match_` (`Id_match_`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3;
+
+--
+-- Déchargement des données de la table `participer`
+--
+
+INSERT INTO `participer` (`Id_joueur`, `Id_match_`, `etre_titulaire_o_n_`, `performance`) VALUES
+(30, 6, 1, 5),
+(31, 6, 1, 3),
+(32, 6, 1, 5),
+(33, 6, 1, 1),
+(35, 6, 1, 4),
+(34, 6, 1, 3),
+(37, 6, 1, 5),
+(39, 6, 0, NULL),
+(40, 6, 0, 3),
+(41, 6, 0, 3),
+(24, 6, 0, NULL),
+(44, 6, 0, 3),
+(43, 6, 0, NULL),
+(38, 6, 0, NULL);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
