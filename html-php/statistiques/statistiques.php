@@ -70,6 +70,7 @@
     // % matchs nuls
     $prctMatchsNuls = $nbMatchsNuls/$nbMatchs*100;
     
+    
 
     ?>
 
@@ -82,7 +83,39 @@
     Nuls : <?php echo round($prctMatchsNuls,2) ?> %<br>
     <h2>Joueurs</h2><br>
 
-    
+    <?php
+
+        //Stats par joueurs
+        $sql = "SELECT nom, prenom, statut, poste_prefere, tmp.nb_tit, tmp.nb_remp, tmp2.performance
+                from joueur
+                    LEFT JOIN
+                        (SELECT Id_joueur, sum(etre_titulaire_o_n_) as nb_tit, 
+                            sum(if(etre_titulaire_o_n_=0,1,0)) as nb_remp
+                        from participer
+                        group by Id_joueur) as tmp
+                    ON joueur.Id_joueur = tmp.Id_joueur
+                    LEFT JOIN (SELECT Id_joueur, round(avg(performance),2) as performance
+                        from participer
+                        where performance IS NOT NULL
+                        group by Id_joueur) as tmp2
+                    ON joueur.Id_joueur = tmp2.Id_joueur;";
+         $prep = $pdo->prepare($sql);
+         $prep -> execute();
+         $resJoueur = $prep->fetchAll();
+         foreach ($resJoueur as $joueur) {
+             echo "<b>".$joueur['nom']." ".$joueur['prenom']."</b><br>";
+             echo "Poste : : ".$joueur['poste_prefere']."<br>";
+             echo "Statut : ".$joueur['statut']."<br>";
+             echo "Nombre de titularisations : ".$joueur['nb_tit']."<br>";
+             echo "Nombre de remplacements : ".$joueur['nb_remp']."<br>";
+             echo "Performance moyenne : ".$joueur['performance']."<br>";
+
+             echo "<br>";
+ 
+         }
+
+
+    ?>
 
 
 
