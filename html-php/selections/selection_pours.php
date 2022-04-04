@@ -8,6 +8,5 @@
 
         foreach($res as $ligne){
                 echo '<option value="'.$ligne['Id_joueur'].'" label = "'.$ligne['nom'].' '.$ligne['prenom'].'">';
-        }
-        
+        }    
 ?>

@@ -1,22 +1,9 @@
 <?php
     include_once('../session.php');
     verification_session();
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Statistiques</title>
-</head>
-<body>
-
-
-
-    <?php
-
+include_once('../header.php');
+echo '<link rel="stylesheet" href="../../css-scss/template.css">';
+include_once('../nav.php');
     include_once('../config.php');
 
     //Nombre de matchs joués dont le résultat a été saisi :
@@ -55,7 +42,13 @@
         $nbMatchsPerdus = $ligne['0'];
     }
     // % matchs perdus
-    $prctMatchsPerdus = $nbMatchsPerdus/$nbMatchs*100;
+    if($nbMatchs!=0){
+        $prctMatchsPerdus = $nbMatchsPerdus/$nbMatchs*100;
+    }
+    else{
+        $prctMatchsPerdus = "NaN";
+    }
+    
 
     //Nombre de matchs nuls :
     $sql = "SELECT count(*) FROM match_
@@ -68,7 +61,12 @@
         $nbMatchsNuls = $ligne['0'];
     }
     // % matchs nuls
-    $prctMatchsNuls = $nbMatchsNuls/$nbMatchs*100;
+    if($nbMatchs!=0){
+        $prctMatchsNuls = $nbMatchsNuls/$nbMatchs*100;
+    }else{
+        $prctMatchsNuls = "NaN";
+    }
+    
     
     
 

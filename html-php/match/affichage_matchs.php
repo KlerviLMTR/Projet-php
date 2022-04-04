@@ -39,6 +39,7 @@
             ">✎</a>
             <a href="./matchs.php?idsupp='.$match["Id_match_"].'">🗑</a>
             <a href="../selections/selection_match.php?idmatch='.$match["Id_match_"].'">Ajout d\'une sélection</a>
+            <a href="../selections/voir_selection_match?idmatch='.$match["Id_match_"].'">Voir la sélection de ce match</a>
         </div>
 
         ';

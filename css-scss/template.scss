@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
 
+
 *{
     margin:0;
     box-sizing: border-box;
@@ -67,4 +68,16 @@ nav{
 main{
     position: relative;
     top:200px;
+    width:70%;
+    left:15%;
   }
+
+footer{
+
+    left:0;
+    position: sticky;
+    top:0;
+    height:200px;
+    width: 100%;
+    background-color: #a4b2c4;
+}

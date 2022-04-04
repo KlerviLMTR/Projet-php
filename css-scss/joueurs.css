@@ -1,0 +1,87 @@
+#grille {
+  width: 60%;
+  height: 250px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 25% 25% 20% 35%;
+      grid-template-columns: 25% 25% 20% 35%;
+  -ms-grid-rows: 16.67% 16.67% 16.67% 16.67% 16.67% 16.67%;
+      grid-template-rows: 16.67% 16.67% 16.67% 16.67% 16.67% 16.67%;
+      grid-template-areas: "poste poste poste poste " "photo nom nom form" "photo dateN dateN form" "photo licence licence form" "photo taille poids form" "boutons boutons boutons boutons";
+  justify-items: center;
+  place-items: center stretch;
+  margin-bottom: 20px;
+  border: 1px solid #dac0c0;
+  border-radius: 3px;
+}
+
+.img {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 4;
+  -ms-grid-column: 1;
+  grid-area: photo;
+}
+
+.poste {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: poste;
+}
+
+.poste h2 {
+  text-align: center;
+  font-size: 1.6em;
+}
+
+.nom {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: nom;
+}
+
+.dateN {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: dateN;
+}
+
+.licence {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: licence;
+}
+
+.taille {
+  -ms-grid-row: 5;
+  -ms-grid-column: 2;
+  grid-area: taille;
+}
+
+.statut_comm {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 4;
+  -ms-grid-column: 4;
+  grid-area: form;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: #dac0c0;
+}
+
+.poids {
+  -ms-grid-row: 5;
+  -ms-grid-column: 3;
+  grid-area: poids;
+}
+
+.footer {
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: boutons;
+}
+/*# sourceMappingURL=joueurs.css.map */
