@@ -3,8 +3,8 @@ include_once('../header.php');
 echo '<link rel="stylesheet" href="../../css-scss/template.css">';
 include_once('../nav.php');
 include_once("../config.php");
-include_once("./match_formulaire_requetes.php");
-include_once("./modifier_match.php");
+include_once("./fonctions_match.php");
+requete_match_formulaire($pdo);
 ?>
     <main> 
         <a href="./matchs.php">Lien pour revenir à la feuille des matchs</a>

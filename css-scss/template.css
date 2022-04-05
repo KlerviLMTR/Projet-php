@@ -65,12 +65,12 @@ nav {
 }
 
 .lien-nav:hover .icone {
-  -webkit-filter: invert(50%) sepia(21%) saturate(677%) hue-rotate(176deg) brightness(150%) contrast(70%);
-          filter: invert(50%) sepia(21%) saturate(677%) hue-rotate(176deg) brightness(150%) contrast(70%);
+  -webkit-filter: invert(30%) sepia(50%) saturate(500%) hue-rotate(207deg) brightness(100%) contrast(100%);
+          filter: invert(30%) sepia(50%) saturate(500%) hue-rotate(207deg) brightness(100%) contrast(100%);
 }
 
 .lien-nav:hover p {
-  color: #99c5fb;
+  color: #cfb8f1;
 }
 
 #logo {
@@ -83,20 +83,47 @@ nav {
   height: 30px;
 }
 
+#main_cont {
+  background-color: #c7c0c7;
+  height: 1900px;
+  position: relative;
+  top: 70px;
+}
+
+#main_sep {
+  width: 80%;
+  background-color: #8e87c1;
+  border: 1px solid #9e98cd;
+  position: relative;
+  left: 10%;
+  margin: 20px 0px 40px 0px;
+}
+
 main {
   position: relative;
-  top: 200px;
+  padding-top: 50px;
   width: 70%;
+  height: 1900px;
   left: 15%;
+  background-color: white;
 }
 
 footer {
   left: 0;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
+  position: relative;
+  top: 500px;
   height: 200px;
   width: 100%;
   background-color: #a4b2c4;
+}
+
+#img_fond {
+  z-index: -1;
+  position: -webkit-sticky;
+  position: sticky;
+  width: 120%;
+  top: 400px;
+  left: -100px;
+  opacity: 50%;
 }
 /*# sourceMappingURL=template.css.map */

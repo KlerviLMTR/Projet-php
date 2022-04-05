@@ -6,8 +6,7 @@ if(!empty($_POST['commentaires'])){
     $decl->execute(array('commentaires'=>$_POST['commentaires'],'id'=>$_POST['joueur']));
     header('Location: ./joueurs.php');
 }else{
-    header('Location: ./commentaires_joueur.php?id='.$_POST['joueur']);
-    
+    header('Location: ./commentaires_joueur.php?id='.$_POST['joueur']);   
 }
 
 ?>

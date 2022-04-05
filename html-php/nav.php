@@ -7,7 +7,7 @@ echo '</head>
 <!-- HEADER -->
 <nav>
         <a href="../index.php" id="lien-logo">
-            <img src="../../images-deco/logo.svg" id="logo" alt="logo Tutshill Tornados">
+            <img src="../../images-deco/logo2.svg" id="logo" alt="logo Tutshill Tornados">
         </a>
 
         <div id="nav_cont">

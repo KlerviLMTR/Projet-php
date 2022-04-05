@@ -24,8 +24,6 @@ foreach($resSelection as $rs){
     }
 }
 
-// echo var_dump($resSelection['0']);
-
 
 
 ?>
