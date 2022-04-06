@@ -54,10 +54,16 @@
                         <option value="Blessé">Blessé</option>
                     </select>  
                     <input type="text" hidden value="'.$joueur["Id_joueur"].'" name="id">
-                    <input type="submit" value="valider" name="enr_statut"/>
+                    <input type="submit" value="valider" class="valider" name="enr_statut"/>
                 </form>
-                <a href="./commentaires_joueur.php?id='.$joueur["Id_joueur"].'">ajouter un commentaire </a> 
-            </div>
+                <p>ajouter un commentaire</p>
+                <form action="./joueurs.php" method="post">
+                    <textarea name="commentaires">'.
+                    $joueur["commentaires"]
+                    .'</textarea>
+                    <input type="submit" class="valider">
+                </form>
+            </div>  
             
             <div class="footer">
                 <a href="../ajout_modif/formulaire.php?v1='.$joueur["Id_joueur"].'&v2='.$joueur["nom"].'&v3='.$joueur["prenom"].'&v4='.$joueur["numero_licence"].'&v5='.$joueur["date_naissance"].'&v6='.$joueur["chemin_photo"].'&v7='.$joueur["taille"].'&v8='.$joueur["poids"].'&v9='.$joueur["poste_prefere"].'

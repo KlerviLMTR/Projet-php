@@ -1,7 +1,7 @@
 #grille {
     position: relative;
-    width: 70%;
-    left:15%;
+    width: 80%;
+    left:10%;
     height: 350px;
     display: grid;
     grid-template-columns: 25% 25% 20% 30%;
@@ -98,3 +98,36 @@
     grid-area : boutons;
 }
 
+select{
+    font-family: 'Raleway', sans-serif;
+    font-size:1.05em;
+    text-align: center;
+    background-color: #ffffff;
+    border:none;
+    position: relative;
+    width: 150px;
+    height:25px;
+    border-radius:10px;
+    //color:rgb(150, 35, 196);
+}
+
+select:focus{
+    outline:none;
+}
+
+.valider{
+    border:1px solid white;
+    border-radius:15px;
+    cursor:pointer;
+    position: relative;
+    height:30px;
+    background-color: #ba9fcb;
+    width:60px;
+    color:white;
+    font-family:  'Raleway', sans-serif;
+}
+
+textarea{
+    border: none;
+    outline: none;
+}
