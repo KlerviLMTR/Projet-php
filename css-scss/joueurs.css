@@ -19,6 +19,14 @@
   border-radius: 10px;
 }
 
+#grille p {
+  display: inline;
+}
+
+#grille h4 {
+  display: inline;
+}
+
 .sep_grille {
   -ms-grid-row: 2;
   -ms-grid-column: 1;

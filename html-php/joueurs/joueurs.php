@@ -11,6 +11,12 @@
         $decl_nv->execute(array('id'=>$_POST['id'],'statut'=>$_POST['statut']));
     }
 
+    if(!empty($_POST['commentaires_joueur'])){
+        $nv_commentaire="update joueur set commentaires = :commentaire where Id_Joueur=:id";
+        $stmt = $pdo->prepare($nv_commentaire);
+        $stmt->execute(array('commentaire'=>$_POST['commentaires_joueur'], 'id'=>$_POST['id_joueur']));
+    }
+
     include_once('../header.php');
     echo '<link rel="stylesheet" href="../../css-scss/template.css">
     <link rel="stylesheet" href="../../css-scss/joueurs.css">

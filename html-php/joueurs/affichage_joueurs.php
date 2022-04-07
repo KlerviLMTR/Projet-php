@@ -56,11 +56,12 @@
                     <input type="text" hidden value="'.$joueur["Id_joueur"].'" name="id">
                     <input type="submit" value="valider" class="valider" name="enr_statut"/>
                 </form>
-                <p>ajouter un commentaire</p>
+                <h4>Ajouter un commentaire :</h4>
                 <form action="./joueurs.php" method="post">
-                    <textarea name="commentaires">'.
+                    <textarea name="commentaires_joueur">'.
                     $joueur["commentaires"]
                     .'</textarea>
+                    <input type="text" hidden name="id_joueur" value="'.$joueur['Id_joueur'].'">
                     <input type="submit" class="valider">
                 </form>
             </div>  
