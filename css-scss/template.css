@@ -85,7 +85,6 @@ nav {
 
 #main_cont {
   background-color: #c7c0c7;
-  height: 1900px;
   position: relative;
   top: 70px;
 }
@@ -102,29 +101,18 @@ nav {
 main {
   position: relative;
   padding-top: 50px;
+  padding-bottom: 50px;
   width: 70%;
-  height: 1900px;
   left: 15%;
   background-color: white;
-  margin-top: 150px;
+  margin-top: 50px;
 }
 
 footer {
   left: 0;
   position: relative;
-  top: 500px;
   height: 200px;
   width: 100%;
   background-color: #a4b2c4;
-}
-
-#img_fond {
-  z-index: -1;
-  position: -webkit-sticky;
-  position: sticky;
-  width: 120%;
-  top: 400px;
-  left: -100px;
-  opacity: 50%;
 }
 /*# sourceMappingURL=template.css.map */

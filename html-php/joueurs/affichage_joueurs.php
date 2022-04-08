@@ -10,7 +10,7 @@
 
             <div class="poste">
                 <img src="../../images-deco/attribution-requise/IconFinder/'.afficher_img($joueur['poste_prefere']).'" alt="icone poste" height="50px" >
-                <h2>'.$joueur["poste_prefere"].'</h2>
+                <h2 class="titres_carte">'.$joueur["poste_prefere"].'</h2>
                 <img src="../../images-deco/attribution-requise/IconFinder/'.afficher_img($joueur['poste_prefere']).'" alt="icone poste" height="50px" >
 
             </div>
@@ -18,33 +18,33 @@
             <hr class="sep_grille">
 
             <div class="nom">
-                <h4>Identité :</h4>
                 <p>'.$joueur["prenom"].' '.$joueur["nom"].'</p>
             </div>
 
             <div class="dateN">
-                <h4>né(e) le:</h4>
+                <h4 class="titres_carte">Né(e) le:</h4>
                 <p>'.$joueur["date_naissance"].'</p>
             </div>
 
             <div class="num">
-                <h4>Licence :</h4>
+                <h4 class="titres_carte">Licence :</h4>
                 <p>n°'.$joueur["numero_licence"].'</p>
             </div>
 
             <div class="taille">
-                <h4>Taille :</h4>
+                <h4 class="titres_carte">Taille :</h4>
                 <p>'.$joueur["taille"].' cm</p>
             </div>
 
             <div class="poids">
-                <h4>Poids :</h4>
+                <h4 class="titres_carte">Poids :</h4>
                 <p>'.$joueur["poids"].' kg</p>
             </div>
 
-            <div class="statut_comm">
+            <div class="statut">
                 <form action="./joueurs.php" method="post">
-                    <h4>Définir le statut :</h4>
+                    <h4 class="titres_carte">Statut :</h4>
+                    <br>
                     <select name="statut"> 
                         <option value="" disabled selected>';
                         echo statut($joueur["statut"]).'</option>
@@ -54,9 +54,12 @@
                         <option value="Blessé">Blessé</option>
                     </select>  
                     <input type="text" hidden value="'.$joueur["Id_joueur"].'" name="id">
+
                     <input type="submit" value="valider" class="valider" name="enr_statut"/>
                 </form>
-                <h4>Ajouter un commentaire :</h4>
+            </div>
+            <div class="commentaires"> 
+                <h4 class="titres_carte">Commentaires :</h4>
                 <form action="./joueurs.php" method="post">
                     <textarea name="commentaires_joueur">'.
                     $joueur["commentaires"]

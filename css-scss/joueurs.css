@@ -1,15 +1,15 @@
 #grille {
   position: relative;
-  width: 80%;
-  left: 10%;
+  width: 70%;
+  left: 15%;
   height: 350px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 25% 25% 20% 30%;
-      grid-template-columns: 25% 25% 20% 30%;
-  -ms-grid-rows: 22% 3% 15% 15% 15% 15% 15%;
-      grid-template-rows: 22% 3% 15% 15% 15% 15% 15%;
-      grid-template-areas: "poste poste poste poste " " hr hr hr hr" "photo nom nom form" "photo dateN dateN form" "photo licence licence form" "photo taille poids form" "boutons boutons boutons boutons";
+  -ms-grid-columns: 25% 20% 20% 35%;
+      grid-template-columns: 25% 20% 20% 35%;
+  -ms-grid-rows: 22% 3% 18.75% 18.75% 18.75% 18.75%;
+      grid-template-rows: 22% 3% 18.75% 18.75% 18.75% 18.75%;
+      grid-template-areas: "poste poste poste poste " " hr hr hr hr" "photo nom nom statut" "photo dateN taille comm" "photo licence poids comm" "boutons boutons boutons boutons";
   justify-items: center;
   place-items: center stretch;
   margin-bottom: 40px;
@@ -33,26 +33,28 @@
   -ms-grid-column-span: 4;
   grid-area: hr;
   place-self: center;
-  width: 80%;
+  width: 90%;
   background-color: white;
   border: 0.5px solid white;
-  margin-bottom: 18px;
+  margin-bottom: 10px;
 }
 
 .img {
   -ms-grid-row: 3;
-  -ms-grid-row-span: 4;
+  -ms-grid-row-span: 3;
   -ms-grid-column: 1;
   grid-area: photo;
   place-self: center;
   position: relative;
+  left: 10px;
+  top: 20px;
 }
 
 .img #cadre_portrait {
   z-index: 1;
   position: absolute;
   left: -10px;
-  top: -9px;
+  top: -7px;
   height: 220px;
 }
 
@@ -86,49 +88,98 @@
   -ms-grid-column: 2;
   -ms-grid-column-span: 2;
   grid-area: nom;
+  place-self: center;
+}
+
+.nom p {
+  text-align: center;
+  font-size: 1.5em;
 }
 
 .dateN {
   -ms-grid-row: 4;
   -ms-grid-column: 2;
-  -ms-grid-column-span: 2;
   grid-area: dateN;
 }
 
 .licence {
   -ms-grid-row: 5;
   -ms-grid-column: 2;
-  -ms-grid-column-span: 2;
   grid-area: licence;
 }
 
 .taille {
-  -ms-grid-row: 6;
-  -ms-grid-column: 2;
+  -ms-grid-row: 4;
+  -ms-grid-column: 3;
   grid-area: taille;
 }
 
-.statut_comm {
+.statut {
   -ms-grid-row: 3;
-  -ms-grid-row-span: 4;
   -ms-grid-column: 4;
-  grid-area: form;
+  grid-area: statut;
   position: relative;
   height: 100%;
   width: 100%;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  padding-left: 10px;
+  padding-top: 7px;
+}
+
+.statut h4 {
+  display: block;
+}
+
+.statut select {
+  display: inline;
+}
+
+.statut .valider {
+  display: inline;
+}
+
+.commentaires {
+  padding-left: 10px;
+  padding-top: 30px;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 4;
+  grid-area: comm;
+}
+
+.commentaires textarea {
+  position: relative;
+  width: 200px;
+  resize: none;
+  height: 110px;
+  border-radius: 5px;
+  font-family: 'Raleway', sans-serif;
+  font-style: italic;
 }
 
 .poids {
-  -ms-grid-row: 6;
+  -ms-grid-row: 5;
   -ms-grid-column: 3;
   grid-area: poids;
 }
 
 .footer {
-  -ms-grid-row: 7;
+  -ms-grid-row: 6;
   -ms-grid-column: 1;
   -ms-grid-column-span: 4;
   grid-area: boutons;
+  text-align: center;
+  font-size: 1.6em;
+}
+
+.footer a:hover {
+  color: #8449a8;
+}
+
+.footer a {
+  padding: 5px;
 }
 
 select {
@@ -138,7 +189,7 @@ select {
   background-color: #ffffff;
   border: none;
   position: relative;
-  width: 150px;
+  width: 200px;
   height: 25px;
   border-radius: 10px;
 }
@@ -162,5 +213,9 @@ select:focus {
 textarea {
   border: none;
   outline: none;
+}
+
+.titres_carte {
+  font-family: 'IM Fell English', serif;
 }
 /*# sourceMappingURL=joueurs.css.map */

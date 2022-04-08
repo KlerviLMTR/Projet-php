@@ -1,17 +1,16 @@
 #grille {
     position: relative;
-    width: 80%;
-    left:10%;
+    width: 70%;
+    left:15%;
     height: 350px;
     display: grid;
-    grid-template-columns: 25% 25% 20% 30%;
-    grid-template-rows: 22% 3% 15% 15% 15% 15% 15%;
+    grid-template-columns: 25% 20% 20% 35%;
+    grid-template-rows: 22% 3% 18.75% 18.75% 18.75% 18.75%;
     grid-template-areas : "poste poste poste poste "
                           " hr hr hr hr"
-                          "photo nom nom form"
-                          "photo dateN dateN form"
-                          "photo licence licence form"
-                          "photo taille poids form"
+                          "photo nom nom statut"
+                          "photo dateN taille comm"
+                          "photo licence poids comm"
                           "boutons boutons boutons boutons";
     justify-items: center;
     place-items: center stretch;
@@ -32,22 +31,24 @@
 .sep_grille{
     grid-area: hr;
     place-self: center;
-    width: 80%;
+    width: 90%;
     background-color: white;
     border:0.5px solid white;
-    margin-bottom: 18px;
+    margin-bottom: 10px;
 
 }
 .img {
     grid-area: photo;
     place-self: center;
     position:relative;
+    left:10px;
+    top:20px;
 
     #cadre_portrait{
         z-index:1;
         position: absolute;
         left:-10px;
-        top:-9px;
+        top: -7px;
         height:220px;
         
     }
@@ -74,6 +75,12 @@
 }
 .nom{
     grid-area:nom;
+    place-self:center;
+    p{
+        text-align: center;
+        font-size:1.5em;
+        
+    }
 }
 
 .dateN{
@@ -88,13 +95,40 @@
     grid-area:taille;
 }
 
-.statut_comm{
-    grid-area: form;
+.statut{
+    grid-area: statut;
     position: relative;
     height:100%;
     width:100%;
+    align-items:end;
+    padding-left:10px;
+    padding-top:7px;
     //background-color: rgb(218, 192, 192);
+    h4{
+        display: block;
+    }
+    select{
+        display:inline;
+    }
+    .valider{
+        display: inline;
+    }
     
+}
+
+.commentaires{
+    padding-left:10px;
+    padding-top:30px;
+    grid-area:comm;
+    textarea{
+        position: relative;
+        width:200px;
+        resize:none;
+        height:110px;
+        border-radius: 5px;
+        font-family: 'Raleway', sans-serif;
+        font-style:italic;
+    }
 }
 
 .poids{
@@ -103,6 +137,14 @@
 
 .footer{
     grid-area : boutons;
+    text-align: center;
+    font-size: 1.6em;
+    a:hover{
+        color:#8449a8;
+    }
+    a{
+        padding:5px;
+    }
 }
 
 select{
@@ -112,7 +154,7 @@ select{
     background-color: #ffffff;
     border:none;
     position: relative;
-    width: 150px;
+    width:200px;
     height:25px;
     border-radius:10px;
     //color:rgb(150, 35, 196);
@@ -137,4 +179,8 @@ select:focus{
 textarea{
     border: none;
     outline: none;
+}
+
+.titres_carte{
+    font-family: 'IM Fell English', serif;
 }
