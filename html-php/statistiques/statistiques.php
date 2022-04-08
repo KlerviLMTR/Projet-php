@@ -102,7 +102,7 @@ include_once('../nav.php');
          $resJoueur = $prep->fetchAll();
          foreach ($resJoueur as $joueur) {
              echo "<b>".$joueur['nom']." ".$joueur['prenom']."</b><br>";
-             echo "Poste : : ".$joueur['poste_prefere']."<br>";
+             echo "Poste : ".$joueur['poste_prefere']."<br>";
              echo "Statut : ".$joueur['statut']."<br>";
              echo "Nombre de titularisations : ".$joueur['nb_tit']."<br>";
              echo "Nombre de remplacements : ".$joueur['nb_remp']."<br>";
