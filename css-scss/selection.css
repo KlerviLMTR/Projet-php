@@ -1,0 +1,60 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.grille {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100px 250px 250px;
+      grid-template-columns: 100px 250px 250px;
+  -ms-grid-rows: 70px 70px 70px;
+      grid-template-rows: 70px 70px 70px;
+      grid-template-areas: "img nom poste" "img taille poids" "img naissance note";
+  background-color: lightgrey;
+  margin: 20px;
+}
+
+img {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 1;
+  grid-area: img;
+}
+
+form {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: note;
+}
+
+.nom {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: nom;
+}
+
+.poste {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: poste;
+}
+
+.taille {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: taille;
+}
+
+.poids {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: poids;
+}
+
+.naissance {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: naissance;
+}
+/*# sourceMappingURL=selection.css.map */

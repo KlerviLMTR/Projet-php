@@ -1,0 +1,37 @@
+*{
+    box-sizing: border-box;
+}
+.grille{
+    display: grid;
+    grid-template-columns: 100px 250px 250px;
+    grid-template-rows: 70px 70px 70px;
+    grid-template-areas: 
+    "img nom poste"
+    "img taille poids"
+    "img naissance note";
+    background-color: lightgrey;
+    margin: 20px;
+
+}
+
+img{
+    grid-area: img;
+}
+form{
+    grid-area: note;
+}
+.nom{
+    grid-area: nom;
+}
+.poste{
+    grid-area: poste;
+}
+.taille{
+    grid-area: taille;
+}
+.poids{
+    grid-area: poids;
+}
+.naissance{
+    grid-area: naissance;
+}

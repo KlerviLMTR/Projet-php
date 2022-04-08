@@ -1,0 +1,60 @@
+@charset "UTF-8";
+.ligne_grille {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 400px 400px;
+      grid-template-columns: 400px 400px;
+  -ms-grid-rows: 30px 30px 30px 30px;
+      grid-template-rows: 30px 30px 30px 30px;
+      grid-template-areas: "equipe score" "date ajout_score" "lieu selection" "joué ajout_selection";
+  background-color: lightgrey;
+}
+
+.score_equipe {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: score;
+}
+
+.lieu {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: lieu;
+}
+
+.date {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: date;
+}
+
+.equipe {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: equipe;
+}
+
+.footer {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: selection;
+}
+
+.joué {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: joué;
+}
+
+.ajout_score {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: ajout_score;
+}
+
+.ajout_selection {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  grid-area: ajout_selection;
+}
+/*# sourceMappingURL=match.css.map */
