@@ -84,12 +84,16 @@ include_once('../nav.php');
     <?php
 
         //Stats par joueurs
-        $sql = "SELECT nom, prenom, statut, poste_prefere, tmp.nb_tit, tmp.nb_remp, tmp2.performance
+        $sql = "SELECT nom, prenom, statut, poste_prefere, tmp.nb_tit, tmp.nb_remp, tmp2.performance, round(tmp.nb_match_gag / tmp.nb_match * 100, 2) as pourc_match_gag
                 from joueur
                     LEFT JOIN
-                        (SELECT Id_joueur, sum(etre_titulaire_o_n_) as nb_tit, 
-                            sum(if(etre_titulaire_o_n_=0,1,0)) as nb_remp
-                        from participer
+                        (SELECT Id_joueur, 
+                            sum(if(etre_titulaire_o_n_=1 AND score_equipe IS NOT NULL AND score_adverse IS NOT NULL,1,0)) as nb_tit, 
+                            sum(if(etre_titulaire_o_n_=0 AND score_equipe IS NOT NULL AND score_adverse IS NOT NULL,1,0)) as nb_remp,
+                            sum(if(score_equipe IS NOT NULL AND score_adverse IS NOT NULL,1,0)) as nb_match,
+                            sum(if(score_equipe > score_adverse,1,0)) as nb_match_gag
+                        from participer, match_
+                        where participer.Id_match_ = match_.Id_match_
                         group by Id_joueur) as tmp
                     ON joueur.Id_joueur = tmp.Id_joueur
                     LEFT JOIN (SELECT Id_joueur, round(avg(performance),2) as performance
@@ -106,7 +110,8 @@ include_once('../nav.php');
              echo "Statut : ".$joueur['statut']."<br>";
              echo "Nombre de titularisations : ".$joueur['nb_tit']."<br>";
              echo "Nombre de remplacements : ".$joueur['nb_remp']."<br>";
-             echo "Performance moyenne : ".$joueur['performance']."<br>";
+             echo "Performance moyenne sur 5 : ".$joueur['performance']."<br>";
+             echo "Matchs gagnés : ".$joueur['pourc_match_gag']." %<br>";
 
              echo "<br>";
  
