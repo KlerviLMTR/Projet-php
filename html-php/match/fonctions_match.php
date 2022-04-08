@@ -113,7 +113,7 @@
             $decl_score->execute(array('score_equipe'=>$_POST["score_equipe"],'score_adversaire'=>$_POST["score_adversaire"],'id_match'=>$_POST["id_match"]));
         }
     
-        $sql = "select * from match_";
+        $sql = "select * from match_ order by date_match desc, heure_match desc";
         $prep = $pdo->prepare($sql);
         $prep -> execute();
         $resultat = $prep->fetchAll();
@@ -159,17 +159,16 @@
                 ';
 
                 if($match["date_match"] < date("Y-m-d")){
-                    echo '<div class="joué">le mactch est passé.</div>';
+                    echo '<div class="joué">le match est passé.</div>';
+                    // echo '<a href="../selections/selection_match.php?idmatch='.$match["Id_match_"].'" id="ajout_selection">Ajout d\'une sélection</a>';
                     echo '<form action="matchs.php" method="post" id="ajout_score">
-                    <!--<label for="score_equipe">Notre score</label>-->
                     <input type="number" name="score_equipe">
-                    <!--<label for="score_adversaire">Score adversaire</label>-->
                     <input type="number" name="score_adversaire">
                     <input type="text" name="id_match" value="'.$match["Id_match_"].'" hidden>
                     <input type="submit">
                     </form>  ';
                 }else{
-                    echo '<div class="joué">le mactch à venir.</div>';
+                    echo '<div class="joué">le match est à venir.</div>';
                     echo '<a href="../selections/selection_match.php?idmatch='.$match["Id_match_"].'" id="ajout_selection">Ajout d\'une sélection</a>';
                 }
 

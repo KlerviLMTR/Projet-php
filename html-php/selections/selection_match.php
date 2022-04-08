@@ -32,30 +32,30 @@
         $poursuiveurs=$stmt->fetchAll();
 
     ?>
+<main>
+    <form action="./validation_selection.php" method="POST">
+        
 
-<form action="./validation_selection.php" method="POST">
-    
-
-    <h2>SELECTIONNEZ LES GARDIENS</h2>
-        <?php
-        selection_gardien($gardiens);
-        ?>
-    <h2>SELECTIONNEZ LES BATTEURS</h2>
-        <?php
-        selection_batteur($batteurs);
-        ?>
-    <h2>SELECTIONNEZ LES POURSUIVEURS</h2>
-        <?php
-        selection_poursuiveur($poursuiveurs);
-        ?>
-    <h2>SELECTIONNEZ LES ATTRAPEURS</h2>
-        <?php
-        selection_attrapeur($attrapeurs);
-        ?>
-    <input type="text" name="idmatch" hidden <?php echo 'value="'.$_GET['idmatch'].'"'?> id="">
-    <input type="submit" value="valider la sélection">
-</form>
-
+        <h2>SELECTIONNEZ LES GARDIENS (1 de chaque)</h2>
+            <?php
+            selection_gardien($gardiens);
+            ?>
+        <h2>SELECTIONNEZ LES BATTEURS (2 de chaque)</h2>
+            <?php
+            selection_batteur($batteurs);
+            ?>
+        <h2>SELECTIONNEZ LES POURSUIVEURS (3 de chaque)</h2>
+            <?php
+            selection_poursuiveur($poursuiveurs);
+            ?>
+        <h2>SELECTIONNEZ LES ATTRAPEURS (1 de chaque)</h2>
+            <?php
+            selection_attrapeur($attrapeurs);
+            ?>
+        <input type="text" name="idmatch" hidden <?php echo 'value="'.$_GET['idmatch'].'"'?> id="">
+        <input type="submit" value="valider la sélection">
+    </form>
+</main>
 
 </body>
 </html>

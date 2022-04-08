@@ -25,10 +25,16 @@ Heure du match : '.$resSelection['0']['17'].'<br>
 
 foreach($resSelection as $rs){
 
+    if($rs['etre_titulaire_o_n_']==1){
+        $titulaire="titulaire";
+    }else{
+        $titulaire="remplaçant";
+    }
+
     echo '<div class="grille">
         <img src="'.$rs['chemin_photo'].'" width="100px" height="210px">
         <span class="nom">'.$rs['nom'].' '.$rs["prenom"].'</span>
-        <span class="poste">'.$rs['poste_prefere'].' </span>
+        <span class="poste">'.$rs['poste_prefere'].' '.$titulaire.'</span>
         <span class="taille">'.$rs['taille'].'cm</span>
         <span class="poids">'.$rs['poids'].'kg</span>
         <span class="naissance">Né(e) le '.$rs['date_naissance'].'</span>
