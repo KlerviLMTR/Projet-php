@@ -5,46 +5,60 @@ $countg=0;
 $counta=0;
 $countb=0;
 $countp=0;
+
+var_dump($_POST['gardiens']);
 foreach($_POST['gardiens'] as $g){
-    list($id,$place) = explode('|', $g);
-    if($place==1){
-        $countg++;
-        $gardientitu = $id;
-    }else{
-        $gardienremplacant = $id;
+    if(!empty($g)){
+        list($id,$place) = explode('|', $g);
+        if($place==1){
+            $countg++;
+            $gardientitu = $id;
+        }else{
+            $gardienremplacant = $id;
+        }
     }
+    
 }
 foreach($_POST['attrapeurs'] as $a){
-    list($id,$place) = explode('|', $a);
-    if($place==1){
-        $counta++;
-        $attrapeurtitu = $id;
-    }else{
-        $attrapeurremplacant = $id;
+    if(!empty($a)){
+        list($id,$place) = explode('|', $a);
+        if($place==1){
+            $counta++;
+            $attrapeurtitu = $id;
+        }else{
+            $attrapeurremplacant = $id;
+        }
     }
+    
 }
 $batteurstitu = [];
 $batteursremplacant = [];
 foreach($_POST['batteurs'] as $b){
-    list($id,$place) = explode('|', $b);
-    if($place==1){
-        $countb++;
-        array_push($batteurstitu, $id);
-    }else{
-        array_push($batteursremplacant, $id);
+    if(!empty($b)){
+        list($id,$place) = explode('|', $b);
+        if($place==1){
+            $countb++;
+            array_push($batteurstitu, $id);
+        }else{
+            array_push($batteursremplacant, $id);
+        }
     }
+    
 }
 
 $pourstitu = [];
 $poursrempl = [];
 foreach($_POST['poursuiveurs'] as $p){
-    list($id,$place) = explode('|', $p);
-    if($place==1){
-        $countp++;
-        array_push($pourstitu, $id);
-    }else{
-        array_push($poursrempl, $id);
+    if(!empty($p)){
+        list($id,$place) = explode('|', $p);
+        if($place==1){
+            $countp++;
+            array_push($pourstitu, $id);
+        }else{
+            array_push($poursrempl, $id);
+        }
     }
+    
 }
 
 if($counta !=1 || $countb != 2 || $countg != 1 || $countp != 3){

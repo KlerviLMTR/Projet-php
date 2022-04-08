@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 08 avr. 2022 à 14:44
+-- Généré le : ven. 08 avr. 2022 à 18:02
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -62,30 +62,33 @@ CREATE TABLE IF NOT EXISTS `joueur` (
   `statut` varchar(50) DEFAULT NULL,
   `commentaires` text,
   PRIMARY KEY (`Id_joueur`)
-) ENGINE=MyISAM AUTO_INCREMENT=46 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=66 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `joueur`
 --
 
 INSERT INTO `joueur` (`Id_joueur`, `nom`, `prenom`, `numero_licence`, `date_naissance`, `chemin_photo`, `taille`, `poids`, `poste_prefere`, `statut`, `commentaires`) VALUES
-(24, 'Weasley', 'George', 45244568, '2022-03-18', '../../photos/george_weasley.jpg', 180, 75.0, 'Batteur', NULL, NULL),
-(30, 'Egerg', 'Edgar', 22547851, '2003-01-23', '../../photos/cormac_mclaggen.jpg', 169, 80.0, 'Attrapeur', NULL, NULL),
-(31, 'Kenobi', 'Jean', 58746985, '1992-12-18', '../../photos/harry_potter.jpg', 174, 67.0, 'Gardien', NULL, NULL),
-(32, 'Ciboulette', 'Jardinet', 54712369, '1965-08-24', '../../photos/oliver_wood.jpg', 189, 76.0, 'Batteur', NULL, NULL),
-(33, 'Anna', 'Bonnemaison', 36874259, '2000-02-01', '../../photos/ginny_weasley.jpg', 165, 54.0, 'Batteur', NULL, NULL),
-(34, 'Vannier', 'Clara', 12369574, '2001-12-30', '../../photos/alicia_spinnet.jpg', 152, 67.0, 'Poursuiveur', NULL, NULL),
-(35, 'Duroc', 'Fiona', 36963233, '1996-05-24', '../../photos/angelina_johnson.jpg', 174, 60.0, 'Poursuiveur', NULL, NULL),
-(36, 'Trommer', 'Luc', 12475896, '1998-10-14', '../../photos/dean_thomas.jpg', 197, 89.0, 'Poursuiveur', NULL, NULL),
-(37, 'Carbolou', 'Seraphine', 36587493, '1992-03-11', '../../photos/default_pic.png', 152, 48.0, 'Attrapeur', NULL, NULL),
-(38, 'Freoult', 'Jessica', 54712456, '2011-12-12', '../../photos/ginny_weasley.jpg', 178, 74.0, 'Poursuiveur', NULL, NULL),
-(39, 'Robin', 'William', 52365874, '1997-07-19', '../../photos/ron_weasley.jpg', 198, 78.0, 'Attrapeur', NULL, NULL),
-(40, 'Gros', 'Nicolas', 54871236, '1987-12-25', '../../photos/ron_weasley.jpg', 173, 88.0, 'Gardien', NULL, NULL),
-(41, 'Parker', 'Sona', 54789658, '1997-05-09', '../../photos/demelza_robbins.jpg', 160, 60.0, 'Batteur', NULL, NULL),
-(42, 'Ploufle', 'Isabelle', 54789745, '1987-11-26', '../../photos/ginny_weasley.jpg', 158, 62.0, 'Batteur', NULL, NULL),
-(43, 'Xerath', 'Ludovic', 54789654, '2000-04-23', '../../photos/fred_weasley.jpg', 200, 87.0, 'Poursuiveur', NULL, NULL),
-(44, 'Salvador', 'Stanislas', 54789653, '2003-05-22', '../../photos/oliver_wood.jpg', 189, 69.0, 'Poursuiveur', NULL, NULL),
-(45, 'Cobra', 'Jean', 21547896, '1999-12-12', '../../photos/ron_weasley.jpg', 189, 78.0, 'Attrapeur', NULL, NULL);
+(56, 'Robbins', 'Demelza', 13221241, '1992-04-12', '../../photos/demelza_robbins.jpg', 172, 68.0, 'Batteur', 'Actif', 'Très bonne saison pour Demelza.'),
+(47, 'Weasley', 'Ginny', 54518544, '1993-02-05', '../../photos/ginny_weasley.jpg', 163, 51.0, 'Poursuiveur', 'Actif', 'Ginny est en constante progression. Son match contre les Harpies était vraiment à tomber par terre!'),
+(48, 'Potter', 'Harry', 71354465, '1991-07-31', '../../photos/harry_potter.jpg', 174, 57.0, 'Attrapeur', 'Actif', 'Harry est constant dans ce qu\'il propose en tant qu\'attrapeur. Mention spéciale au vif d\'or qu\'il a failli avaler lors de son premier match '),
+(49, 'Dubois', 'Olivier', 98779894, '1989-05-12', '../../photos/oliver_wood.jpg', 181, 75.0, 'Gardien', 'Actif', 'Excellente saison de quidditch!'),
+(50, 'McLaggen', 'Cormac', 78784644, '1991-02-16', '../../photos/cormac_mclaggen.jpg', 185, 82.0, 'Gardien', 'Actif', 'Cormac est un bon gardien, mais n\'a pas fait preuve d\'un très grand fair-play lors de ses derniers matchs.'),
+(51, 'Johnson', 'Angelina', 75753876, '1990-05-04', '../../photos/angelina_johnson.jpg', 171, 59.0, 'Poursuiveur', 'Actif', 'Magnifique reprise de Souaffle contre les flèches d\'Appleby.'),
+(52, 'Spinnet', 'Alicia', 45244553, '1990-12-15', '../../photos/alicia_spinnet.jpg', 165, 56.0, 'Poursuiveur', 'Actif', 'Une saison en demi-teinte pour Alicia qui doit encore prendre ses marques'),
+(53, 'Weasley', 'Fred', 46545441, '1990-11-18', '../../photos/fred_weasley.jpg', 180, 72.0, 'Batteur', 'Actif', 'Fred est constant dans ses progrès. On aurait toutefois préféré qu\'il ne balance pas son cognard dans la tête de son frère.'),
+(54, 'Bell', 'Katie', 98115231, '1990-01-13', '../../photos/katie_bell.jpg', 163, 51.0, 'Poursuiveur', 'Actif', 'Très bonne saison.\r\nNote à moi -même : Son Nimbus 2020 a besoin d\'être remplacé'),
+(55, 'Thomas', 'Dean', 12115254, '1991-11-15', '../../photos/dean_thomas.jpg', 178, 59.0, 'Poursuiveur', 'Actif', 'En vacances jusqu\'à la fin de la saison !'),
+(46, 'Weasley', 'George', 10545454, '1990-11-18', '../../photos/george_weasley.jpg', 180, 72.0, 'Batteur', 'Actif', 'Très bonne saison malgré le cognard que lui a malecontreusement lancé son frère Fred ...'),
+(57, 'Weasley', 'Ron', 12103221, '1991-12-12', '../../photos/ron_weasley.jpg', 189, 79.0, 'Gardien', 'Actif', 'Ron est doué mais doit prendre confiance en lui! \r\n(et ne pas se laisser intimider par Cormac..)'),
+(58, 'Lovegood', 'Luna', 98798754, '1991-09-18', '../../photos/luna_lovegood.png', 161, 47.0, 'Attrapeur', 'Actif', 'Luna est une très bonne attrapeuse, lorsqu\'elle n\'est pas dans la lune...'),
+(59, 'Chang', 'Cho', 89465454, '1991-10-14', '../../photos/cho_chang.png', 162, 50.0, 'Attrapeur', 'Actif', 'Cho est très douée et est en constante progression ! '),
+(60, 'Diggory', 'Cedric', 12424535, '1989-02-01', '../../photos/cedric_diggory.png', 182, 71.0, 'Attrapeur', 'Actif', 'Eh ouais. Il est pas mort en fait.'),
+(61, 'Lestrange', 'Bellatrix', 66666666, '1968-09-14', '../../photos/bellatrix_lestrange.png', 168, 51.0, 'Batteur', 'Actif', 'Un talent certain pour balancer les cognards sur les autres! (et pas que sur les adversaires...)'),
+(62, 'Trelawney', 'Sybille', 48744544, '1964-08-02', '../../photos/sybille_trelawney.png', 168, 50.0, 'Poursuiveur', 'Actif', 'Bien meilleure poursuiveuse qu\'elle n\'est voyante! \r\n(A toutefois un souci avec le Xerès.. à surveiller)'),
+(63, 'Rogue', 'Severus', 46432152, '1968-06-12', '../../photos/severus_rogue.png', 182, 78.0, 'Poursuiveur', 'Actif', 'Always.'),
+(64, 'Finnigan', 'Seamus', 57445645, '1991-03-28', '../../photos/seamus_finnigan.png', 172, 56.0, 'Batteur', 'Actif', NULL),
+(65, 'Hagrid', 'Rubeus', 8568788, '1964-09-21', '../../photos/rubeus_hagrid.png', 351, 254.0, 'Batteur', 'Actif', NULL);
 
 -- --------------------------------------------------------
 
@@ -103,21 +106,20 @@ CREATE TABLE IF NOT EXISTS `match_` (
   `score_equipe` int(11) DEFAULT NULL,
   `score_adverse` int(11) DEFAULT NULL,
   PRIMARY KEY (`Id_match_`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `match_`
 --
 
 INSERT INTO `match_` (`Id_match_`, `date_match`, `heure_match`, `equipe_adverse`, `lieu`, `score_equipe`, `score_adverse`) VALUES
-(6, '2021-01-02', '20:00:00', 'Harpies de Holyhead', 'exterieur', 150, 7),
-(5, '2021-05-03', '18:00:00', 'Harpies de Holyhead', 'domicile', 64, 189),
-(7, '2022-01-02', '20:00:00', 'Harpies de Holyhead', 'exterieur', 90, 90),
-(8, '2022-02-02', '20:00:00', 'Flèches d\'Appleby', 'exterieur', 45, 40),
-(9, '2022-03-02', '18:43:00', 'Flèches d\'Appleby', 'exterieur', 0, 150),
-(10, '2022-03-02', '18:43:00', 'sqd', 'exterieur', NULL, NULL),
-(11, '2022-03-02', '18:43:00', 'sqd', 'exterieur', NULL, NULL),
-(12, '2022-04-23', '20:00:00', 'Tourterelles des Olivers', 'Domicile', NULL, NULL);
+(18, '2022-04-01', '18:00:00', 'Puddlemere United', 'Domicile', 170, 40),
+(19, '2021-06-02', '19:00:00', 'Appleby Arrows', 'Exterieur', 10, 150),
+(17, '2022-03-15', '20:00:00', 'Pride of Portree', 'Domicile', 160, 170),
+(12, '2022-04-10', '21:00:00', 'Catapultes de Caerphilly', 'Domicile', NULL, NULL),
+(20, '2021-08-25', '14:30:00', 'Wimbourne Wasps', 'Domicile', 500, 480),
+(14, '2022-04-30', '00:00:00', 'Harpies de Holyhead', 'Domicile', NULL, NULL),
+(16, '2022-01-06', '13:30:00', 'Harpies de Holyhead', 'Exterieur', 180, 90);
 
 -- --------------------------------------------------------
 
@@ -149,11 +151,97 @@ INSERT INTO `participer` (`Id_joueur`, `Id_match_`, `etre_titulaire_o_n_`, `perf
 (37, 6, 1, 5),
 (39, 6, 0, NULL),
 (40, 6, 0, 3),
-(41, 6, 0, 3),
-(24, 6, 0, NULL),
+(48, 6, 0, 3),
+(46, 6, 0, 3),
 (44, 6, 0, 3),
-(43, 6, 0, NULL),
-(38, 6, 0, NULL);
+(47, 6, 0, 3),
+(49, 6, 0, NULL),
+(48, 17, 1, 1),
+(56, 17, 1, 3),
+(53, 17, 1, 4),
+(49, 17, 1, 2),
+(47, 17, 1, 4),
+(51, 17, 1, 3),
+(52, 17, 1, 3),
+(48, 12, 1, NULL),
+(56, 12, 1, NULL),
+(65, 12, 1, NULL),
+(50, 12, 1, NULL),
+(47, 12, 1, NULL),
+(52, 12, 1, NULL),
+(55, 12, 1, NULL),
+(60, 12, 0, NULL),
+(53, 12, 0, NULL),
+(64, 12, 0, NULL),
+(57, 12, 0, NULL),
+(51, 12, 0, NULL),
+(62, 12, 0, NULL),
+(63, 12, 0, NULL),
+(59, 14, 1, NULL),
+(46, 14, 1, NULL),
+(61, 14, 1, NULL),
+(50, 14, 1, NULL),
+(54, 14, 1, NULL),
+(62, 14, 1, NULL),
+(63, 14, 1, NULL),
+(58, 14, 0, NULL),
+(53, 14, 0, NULL),
+(64, 14, 0, NULL),
+(57, 14, 0, NULL),
+(51, 14, 0, NULL),
+(52, 14, 0, NULL),
+(55, 14, 0, NULL),
+(48, 16, 1, 5),
+(53, 16, 1, 3),
+(65, 16, 1, 5),
+(57, 16, 1, 2),
+(51, 16, 1, 5),
+(54, 16, 1, 5),
+(62, 16, 1, 2),
+(58, 16, 0, 4),
+(56, 16, 0, 1),
+(46, 16, 0, 4),
+(50, 16, 0, 2),
+(52, 16, 0, 3),
+(55, 16, 0, 3),
+(63, 16, 0, 4),
+(60, 18, 1, 5),
+(56, 18, 1, 3),
+(46, 18, 1, 4),
+(50, 18, 1, 2),
+(55, 18, 1, 4),
+(62, 18, 1, 4),
+(63, 18, 1, 5),
+(58, 18, 0, 5),
+(61, 18, 0, 1),
+(64, 18, 0, 2),
+(57, 18, 0, 5),
+(51, 18, 0, 2),
+(52, 18, 0, 2),
+(54, 18, 0, 4),
+(59, 20, 1, 1),
+(56, 20, 1, 4),
+(46, 20, 1, 3),
+(50, 20, 1, 2),
+(47, 20, 1, 4),
+(52, 20, 1, 4),
+(54, 20, 1, 2),
+(58, 20, 0, 5),
+(53, 20, 0, 5),
+(48, 19, 1, 4),
+(56, 19, 1, 3),
+(46, 19, 1, 3),
+(50, 19, 1, 1),
+(55, 19, 1, 4),
+(62, 19, 1, 3),
+(63, 19, 1, 2),
+(60, 19, 0, 3),
+(53, 19, 0, 2),
+(61, 19, 0, 5),
+(57, 19, 0, 3),
+(47, 19, 0, 4),
+(51, 19, 0, 2),
+(52, 19, 0, 4);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
