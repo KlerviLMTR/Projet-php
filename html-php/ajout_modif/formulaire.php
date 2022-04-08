@@ -162,9 +162,9 @@
                 >
                 <label for="Gardien">Gardien</label>
             </div>
-
+            <?php if(isset($_GET["v6"])){ echo '<img src="' . $_GET["v6"] . '" width="150px" height="200px" alt="">';} ?>
             <div>
-                <label for="image">Importer une image :</label>
+                <label for="image">Importer une nouvelle image :</label>
                 <input type="file" name="image">
             </div>
 

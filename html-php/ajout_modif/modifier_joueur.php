@@ -47,7 +47,7 @@
     
     function pr_poste_att(){
         if( isset($_GET["v9"])){
-            if(($_GET["v9"])=="attrapeur"){
+            if(($_GET["v9"])=="Attrapeur"){
                 echo 'checked';
             }
         }
@@ -55,7 +55,7 @@
 
     function pr_poste_pours(){
         if( isset($_GET["v9"])){
-            if(($_GET["v9"])=="poursuiveur"){
+            if(($_GET["v9"])=="Poursuiveur"){
                 echo 'checked';
             }
         }
@@ -63,7 +63,7 @@
 
     function pr_poste_batt(){
         if( isset($_GET["v9"])){
-            if(($_GET["v9"])=="batteur"){
+            if(($_GET["v9"])=="Batteur"){
                 echo 'checked';
             }
         }
@@ -71,7 +71,7 @@
 
     function pr_poste_gard(){
         if( isset($_GET["v9"])){
-            if(($_GET["v9"])=="gardien"){
+            if(($_GET["v9"])=="Gardien"){
                 echo 'checked';
             }
         }

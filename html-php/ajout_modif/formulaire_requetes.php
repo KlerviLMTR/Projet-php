@@ -6,7 +6,7 @@ if (
     //!EMPTY et pas ISSET (Isset ne bloquait pas l'import de l'image dans le systeme de fichiers)
     !empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['licence'])
     && !empty($_POST['dateN']) && !empty($_POST['taille']) && !empty($_POST['poids'])
-    && !empty($_POST['poste']) && !empty($_FILES['image']['tmp_name'])
+    && !empty($_POST['poste'])
 ) {
 
     //Sauvegarde de l'image actuelle du joueur si un Id a été renseigné (si on est dans le cas d'une modif)
@@ -14,7 +14,7 @@ if (
         
     }
 
-    if (empty($_POST['Id_joueur'])){
+    if (empty($_POST['Id_joueur']) && !empty($_FILES['image']['tmp_name'])){
         //Si l'ID joueur n'est pas renseigné, on entre un nouveau joueur dans la BDD:
         
             //Etape 1 : vérifier que la photo respecte les critères d'import :
@@ -53,34 +53,53 @@ if (
     //Si un ID joueur est déjà renseigné, on effectue un update du joueur concerné :
     elseif(isset($_POST['Id_joueur'])){
 
-        $sql_id_joueur = 'select chemin_photo from joueur where Id_joueur = :id_joueur;';
-        $donnee_photo =[
-                        'id_joueur' => $_POST['Id_joueur']
-        ];
+        $donnees_modif = [
+            'nom' => $_POST['nom'],
+            'prenom' => $_POST['prenom'],
+            'licence' => $_POST['licence'],
+            'dateN' => $_POST['dateN'],
+            'taille' => $_POST['taille'],
+            'poids' => $_POST['poids'],
+            'poste' => $_POST['poste'],
+            'id_joueur' => $_POST['Id_joueur']
+            ];
 
-        $decl = $pdo -> prepare($sql_id_joueur);
-        $decl -> execute($donnee_photo);
-        $chemin_img_tab = $decl -> fetchAll();
+        $modifier_sql = "update joueur 
+            set joueur.nom = :nom,
+            joueur.prenom = :prenom,
+            joueur.numero_licence = :licence,
+            joueur.date_naissance = :dateN,
+            joueur.taille = :taille,
+            joueur.poids = :poids,
+            joueur.poste_prefere = :poste 
+            where joueur.Id_joueur = :id_joueur";
 
-        foreach ($chemin_img_tab as $ligne){
-            $chemin_img = $ligne['chemin_photo'];
-            unlink($chemin_img);
-        }
+        // Si une nouvelle photo est envoyée, on modifie l'ancienne
+        if(!empty($_FILES['image']['tmp_name'])){
+            $sql_id_joueur = 'select chemin_photo from joueur where Id_joueur = :id_joueur;';
+            $donnee_photo =[
+                            'id_joueur' => $_POST['Id_joueur']
+            ];
 
+            $decl = $pdo -> prepare($sql_id_joueur);
+            $decl -> execute($donnee_photo);
+            $chemin_img_tab = $decl -> fetchAll();
 
-
-
-
-
+            foreach ($chemin_img_tab as $ligne){
+                $chemin_img = $ligne['chemin_photo'];
+                unlink($chemin_img);
+            }
         
-        
-        //Etape 1 : vérifier que la photo respecte les critères d'import 
-        $fichier_cible = est_photo_ok();
-        //Etape 2 : vérifier que l'image s'importe bien dans le système de fichiers
-        if (move_uploaded_file($_FILES['image']['tmp_name'], $fichier_cible)) {
-            echo "Votre image a bien été importée.";
+            //Etape 1 : vérifier que la photo respecte les critères d'import 
+            $fichier_cible = est_photo_ok();
+
+            //Etape 2 : vérifier que l'image s'importe bien dans le système de fichiers
+            if (move_uploaded_file($_FILES['image']['tmp_name'], $fichier_cible)) {
+                echo "Votre image a bien été importée.";
         
             //Etape 3 : insérer toutes les données en BDD
+
+            $donnees_modif += ['photo' => '../../photos/' . $_FILES['image']['name']];
         
             $modifier_sql = "update joueur 
             set joueur.nom = :nom,
@@ -92,27 +111,18 @@ if (
             joueur.poids = :poids,
             joueur.poste_prefere = :poste 
             where joueur.Id_joueur = :id_joueur";
-
-            $donnees_modif = [
-            'nom' => $_POST['nom'],
-            'prenom' => $_POST['prenom'],
-            'licence' => $_POST['licence'],
-            'dateN' => $_POST['dateN'],
-            'photo' => '../../photos/' . $_FILES['image']['name'],
-            'taille' => $_POST['taille'],
-            'poids' => $_POST['poids'],
-            'poste' => $_POST['poste'],
-            'id_joueur' => $_POST['Id_joueur']
-            ];
-
-            $decl = $pdo -> prepare($modifier_sql);
-            $decl -> execute($donnees_modif);
             }
             //Si l'import a échoué, afficher un message
-        else {
-            echo "Une erreur est survenue durant l'import";
+            else {
+                echo "Une erreur est survenue durant l'import";
+                $photo_nok;
+            }
         }
-           
+
+        if(!isset($photo_nok)){
+            $decl = $pdo -> prepare($modifier_sql);
+            $decl -> execute($donnees_modif);
+        }           
     } 
 }
 
