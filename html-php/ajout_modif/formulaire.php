@@ -6,28 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../../css-scss/template.css">
-    <style>
-        form{
-            width:50%;
-            display:flex;
-            flex-direction:column;
-        }
-        .ligne_form{
-            display:flex;
-        }
+    <link rel="stylesheet" href="../../css-scss/polices.css">
 
-        .lab{
-            text-align:right;
-            flex:1;
-        }
+    <link rel="stylesheet" href="../../css-scss/form_joueur.css">
 
-        .champ{
-            margin-left:5px;
-            flex:2;
-        }
-
-
-    </style>
 </head>
 <body>
 
@@ -66,116 +48,137 @@
 
     </nav>
 
-    <main>
-        <h1>Ajouter un joueur :</h1>
-        <a href="../joueurs/joueurs.php">lien vers l'affichage des joueurs</a>
-        <form action="./formulaire.php" enctype="multipart/form-data" method="POST">
-
-            <div class="ligne_form">
-                <label for="nom" class="lab">Nom :</label>
-                <input type="text" name="nom" class="champ" minlength="2" maxlength ="50" 
-                <?php
-                    pr_nom();
-                ?>
-                >
-            </div>
-
-            <div class="ligne_form">
-                <label for="prenom" class="lab">Prénom :</label>
-                <input type="text" name="prenom" class="champ" minlenght="2" maxlength="50"
-                <?php
-                    pr_prenom();
-                ?>
-                >
-            </div>
-
-            <div class="ligne_form">
-                <label for="licence" class="lab">Numéro de licence :</label>
-                <input type="tel" name="licence" maxlength="8" class="champ" minlength="8"
-                <?php
-                    pr_licence(); 
-                ?>
-                >
-            </div>
-
-            <div class="ligne_form">
-                <label for="dateN" class="lab">Date de naissance :</label>
-                <input type="date" name="dateN" class="champ"
-                <?php
-                    pr_dateN();
-                ?>
-                >
-            </div>
-
-            <div class="ligne_form">
-                <label for="taille" class="lab">Taille :</label>
-                <input type="tel" name="taille" class="champ" minlength="2" maxlength="3" 
-                <?php
-                    pr_taille();
-                ?>
-                >
-            </div>
-
-            <div class="ligne_form">
-                <label for="poids" class="lab">Poids :</label>
-                <input type="tel" name="poids" class="champ" minlength="2" maxlength="3" 
-                <?php
-                    pr_poids();
-                ?>
-                >
-            </div>
-
-            <p>Poste préféré :</p>
-            <div>
-                <input type="radio" name="poste" value="Attrapeur"
-                <?php
-                    pr_poste_att();
-                ?>
-                >
-                <label for="Attrapeur">Attrapeur</label
-                >
-            </div>
-
-            <div>
-                <input type="radio" name="poste" value="Poursuiveur"
-                <?php
-                    pr_poste_pours();
-                ?>
-                >
-                <label for="Poursuiveur">Poursuiveur</label>
-            </div>
-
-            <div>
-                <input type="radio" name="poste" value="Batteur"
-                <?php
-                    pr_poste_batt();
-                ?>
-                >
-                <label for="Batteur">Batteur</label>
-            </div>
-
-            <div>
-                <input type="radio" name="poste" value="Gardien"
-                <?php
-                    pr_poste_gard();
-                ?>
-                >
-                <label for="Gardien">Gardien</label>
-            </div>
-            <?php if(isset($_GET["v6"])){ echo '<img src="' . $_GET["v6"] . '" width="150px" height="200px" alt="">';} ?>
-            <div>
-                <label for="image">Importer une nouvelle image :</label>
-                <input type="file" name="image">
-            </div>
-
-            <input type="text" hidden name="Id_joueur"
+    <div id="main_cont">
+        <main>
             <?php
-                pr_id();
+                if (isset($_GET['v1'])){
+                    echo '<h1>Modifier un joueur :</h1>';
+                }
+                else{
+                    echo '<h1>Ajouter un joueur : </h1>';
+                
+                }
+            
             ?>
-            >
-            <input type="submit" value="enregistrer">
-        </form>
-    
-    </main>
+            <hr id="main_sep">
+            <form action="./formulaire.php" enctype="multipart/form-data" method="POST" id="form">
+
+                    <label for="nom" id="labN">Nom :</label>
+                    <input class="champ" type="text" name="nom" id="chN" minlength="2" maxlength ="50" 
+                    <?php
+                        pr_nom();
+                    ?>
+                    >
+
+                
+                    <label for="prenom" id="labPr">Prénom :</label>
+                    <input class="champ" type="text" name="prenom" id="chPr"  minlenght="2" maxlength="50"
+                    <?php
+                        pr_prenom();
+                    ?>
+                    >
+                
+
+               
+                    <label for="licence" id="labL">Numéro de licence :</label>
+                    <input class="champ" type="tel" name="licence" maxlength="8"  id="chL" minlength="8"
+                    <?php
+                        pr_licence(); 
+                    ?>
+                    >
+                
+
+                    <label for="dateN" id="labD">Date de naissance :</label>
+                    <input class="champ" input type="date" name="dateN" id="chD"
+                     <?php   pr_dateN();
+                    ?>>
+                    
+                
+
+                    <label for="taille" id="labT">Taille :</label>
+                    <input class="champ" type="tel" name="taille" id="chT" minlength="2" maxlength="3" 
+                    <?php
+                        pr_taille();
+                    ?>
+                    >
+
+                    <label for="poids" id="labP">Poids :</label>
+                    <input class="champ" type="tel" name="poids" id="chP" minlength="2" maxlength="3" 
+                    <?php
+                        pr_poids();
+                    ?>
+                    >
+
+
+                    
+                        <p id ="labPos">Poste préféré :</p>
+
+                            <div id ="radA">
+                                <input type="radio" name="poste" value="Attrapeur"
+                                <?php
+                                    pr_poste_att();
+                                ?>
+                                >
+                                <label for="Attrapeur">Attrapeur</label>
+                            </div>
+
+                            <div id ="radP">
+                                <input type="radio" name="poste" id="radP" value="Poursuiveur"
+                                <?php
+                                    pr_poste_pours();
+                                ?>
+                                >
+                                <label for="Poursuiveur" class="poste">Poursuiveur</label>
+                            </div>
+
+                            <div id="radB">
+                                <input type="radio" name="poste" class="poste" value="Batteur"
+                                <?php
+                                    pr_poste_batt();
+                                ?>
+                                >
+                                <label for="Batteur" class="poste">Batteur</label>
+                            </div>
+
+                            <div id="radG">
+                                <input type="radio" name="poste" class="poste" value="Gardien"
+                                <?php
+                                    pr_poste_gard();
+                                ?>
+                                >
+                                <label for="Gardien" class="poste">Gardien</label>
+                            </div>
+                    
+                    
+                    
+                        
+                        <?php if(isset($_GET["v6"])){ echo '
+                            <label for="image" id="titre_img">Image actuelle :</label>
+                            <img src="' . $_GET["v6"] . '" width="150px" height="200px" id="img" alt="Portrait">
+                            <label for="image" class="impimg">Importer une nouvelle image :</label>';} 
+                            else{
+                                echo '<label for="image" class="impimg">Importer une image :</label>';
+                            }?>
+                        <label id="boutonimp">Choisir une photo
+                            <input type="file"  name="image">
+                        </label>
+              
+
+                
+
+                <input type="text" hidden name="Id_joueur"
+                <?php
+                    pr_id();
+                ?>
+                >
+                <a href="../joueurs/joueurs.php" id="annuler">
+                            <button>Annuler</button>
+                </a>
+
+                <input type="submit" id="valider" value="Enregistrer">
+            </form>
+        
+        </main>
+    </div>
 </body>
 </html>

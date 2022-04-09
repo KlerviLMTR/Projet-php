@@ -1,7 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap");
 .grille {
   position: relative;
-  width: 70%;
-  left: 15%;
+  width: 90%;
+  left: 5%;
   height: 350px;
   display: -ms-grid;
   display: grid;
@@ -126,7 +127,6 @@
   grid-area: statut;
   position: relative;
   height: 100%;
-  width: 100%;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: end;
@@ -140,6 +140,7 @@
 
 .statut select {
   display: inline;
+  width: 200px;
 }
 
 .statut .valider {
@@ -195,7 +196,7 @@ select {
   background-color: #ffffff;
   border: none;
   position: relative;
-  width: 150px;
+  width: 170px;
   height: 25px;
   border-radius: 10px;
 }
@@ -205,15 +206,17 @@ select:focus {
 }
 
 .valider {
-  border: 1px solid white;
-  border-radius: 15px;
-  cursor: pointer;
-  position: relative;
-  height: 30px;
-  background-color: #ba9fcb;
   width: 60px;
+  position: relative;
+  height: 35px;
+  left: 3px;
+  border: 1px solid #BA9FCB;
+  border-radius: 120px;
+  background-color: #9673ab;
   color: white;
-  font-family: 'Raleway', sans-serif;
+  cursor: pointer;
+  -webkit-box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.264);
+          box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.264);
 }
 
 textarea {
@@ -222,6 +225,9 @@ textarea {
 }
 
 .titres_carte {
-  font-family: 'IM Fell English', serif;
+  font-family: 'Amatic SC', cursive;
+  font-weight: 700;
+  font-size: 1.2em;
+  letter-spacing: 1px;
 }
 /*# sourceMappingURL=joueurs.css.map */

@@ -27,8 +27,6 @@
     <div id="main_cont">
         <main>
 
-        <!-- à refactorer -->
-
 
             <h1>Liste des joueurs :</h1>
             <hr id="main_sep">
