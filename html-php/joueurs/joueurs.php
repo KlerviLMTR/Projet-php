@@ -56,7 +56,7 @@
                                 UPPER(statut) like UPPER(:a'.$cpt.') OR ';
                         } else {
                             $sql.='UPPER(nom) like UPPER(:a'.$cpt.') OR UPPER(prenom) like UPPER(:a'.$cpt.') OR UPPER(poste_prefere) like UPPER(:a'.$cpt.') OR 
-                                UPPER(statut) like UPPER(:a'.$cpt.')';
+                                UPPER(statut) like UPPER(:a'.$cpt.') order by nom';
                         }
                         $search_data['a'.$cpt] = "%$mot%";
                         $cpt++;
@@ -82,7 +82,7 @@
                     supprimer_joueur($pdo);
 
                     //Récupérer toutes les données nécessaires à l'affichage des joueurs:
-                    $sql = "select * from joueur ";
+                    $sql = "select * from joueur order by nom";
                     $prep = $pdo->prepare($sql);
                     $prep -> execute();
                     $resultat = $prep->fetchAll();
