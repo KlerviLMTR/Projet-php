@@ -7,26 +7,27 @@ echo '<link rel="stylesheet" href="../../css-scss/template.css">
 include_once('../nav.php');
 include_once('./fonctions_match.php');
 ?>
-    
-    <main>
-        
-        <h1>Liste des matchs</h1>
-        <a href="./match_formulaire.php">Ajouter un match</a>
-        <br><br>
-        <?php
-            include_once('../config.php');
+    <div id="main_cont">
+        <main>
+            
+            <h1>Liste des matchs</h1>
+            <a href="./match_formulaire.php">Ajouter un match</a>
+            <br><br>
+            <?php
+                include_once('../config.php');
 
-            //Vérfier si un joueur a été supprimé:
-            supprimer_match($pdo);
+                //Vérfier si un joueur a été supprimé:
+                supprimer_match($pdo);
 
-            //Récupérer toutes les données nécessaires à l'affichage des matchs:
-           
+                //Récupérer toutes les données nécessaires à l'affichage des matchs:
+            
 
-            //Affichage des joueurs :
-            afficher_match($pdo);
+                //Affichage des joueurs :
+                afficher_match($pdo);
 
-        ?>
-    </main>
+            ?>
+        </main>
+    </div>
     
 </body>
 </html>
