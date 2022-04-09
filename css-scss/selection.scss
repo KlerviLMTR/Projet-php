@@ -1,24 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+
 *{
     box-sizing: border-box;
 }
-.grille{
-    display: grid;
-    grid-template-columns: 100px 250px 250px;
-    grid-template-rows: 70px 70px 70px;
-    grid-template-areas: 
-    "img nom poste"
-    "img taille poids"
-    "img naissance note";
-    background-color: lightgrey;
-    margin: 20px;
 
+.grille{
+    grid-template-areas: 
+    "poste poste poste poste"
+    "sep_grille sep_grille sep_grille sep_grille"
+    "img nom nom ."
+    "img dateN taille note"
+    "img num poids ."
+    ". . . ."
+    ;
 }
 
-img{
+.img{
     grid-area: img;
 }
-form{
-    grid-area: note;
+.num{
+    grid-area: num;
 }
 .nom{
     grid-area: nom;
@@ -32,6 +33,18 @@ form{
 .poids{
     grid-area: poids;
 }
-.naissance{
-    grid-area: naissance;
+.sep_grille{
+    grid-area: sep_grille;
+}
+.dateN{
+    grid-area: dateN;
+}
+.note{
+    grid-area: note;
+}
+
+#selection{
+    text-align: center;
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.5em;
 }
