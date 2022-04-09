@@ -1,13 +1,13 @@
 <?php
     foreach($resultat as $joueur){
         echo '
-        <div id="grille">
+        <div class="grille">
             <div class="img" >
                 <img src="'.$joueur["chemin_photo"].'" width="150px" height="200px" alt="">
                 <img src="../../images-deco/attribution-requise/SS/Cadre-photo.svg" alt="Cadre portrait" height="210px" id="cadre_portrait">
 
             </div>
-
+            <br class="sep_grille">
             <div class="poste">
                 <img src="../../images-deco/attribution-requise/IconFinder/'.afficher_img($joueur['poste_prefere']).'" alt="icone poste" height="50px" >
                 <h2 class="titres_carte">'.$joueur["poste_prefere"].'</h2>

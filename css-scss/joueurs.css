@@ -1,4 +1,4 @@
-#grille {
+.grille {
   position: relative;
   width: 70%;
   left: 15%;
@@ -19,11 +19,11 @@
   border-radius: 10px;
 }
 
-#grille p {
+.grille p {
   display: inline;
 }
 
-#grille h4 {
+.grille h4 {
   display: inline;
 }
 
@@ -94,6 +94,12 @@
 .nom p {
   text-align: center;
   font-size: 1.5em;
+}
+
+.num {
+  -ms-grid-row: 5;
+  -ms-grid-column: 2;
+  grid-area: licence;
 }
 
 .dateN {
@@ -189,7 +195,7 @@ select {
   background-color: #ffffff;
   border: none;
   position: relative;
-  width: 200px;
+  width: 150px;
   height: 25px;
   border-radius: 10px;
 }

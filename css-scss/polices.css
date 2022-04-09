@@ -1,15 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap');
-
 h1 {
   font-family: 'Amatic SC', cursive;
-  font-size: 3.9em;
+  font-size: 3.4em;
   text-align: center;
 }
 
 p {
   font-family: 'Raleway', sans-serif;
+  display: inline;
 }
 
 h2 {
