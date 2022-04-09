@@ -243,6 +243,7 @@ form label {
 }
 
 #annuler button {
+  pointer-events: none;
   width: 120px;
   height: 45px;
   border: 1px solid #a4a3a5;

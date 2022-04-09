@@ -15,59 +15,80 @@ requete_match_formulaire($pdo);
 
 
     <main>
+        <h1>
+            <?php
+                if (isset($_GET['v1'])){
+                    echo'Modifier un match :';
+                }
+                else{
+                        echo 'Ajouter un match : ';
+                }
+                
+            ?>
+        </h1>
+        <hr id="main_sep">
         <a href="./matchs.php">Lien pour revenir à la feuille des matchs</a>
 
         <form action="./formulaire.php" enctype="multipart/form-data" method="POST" id="form">
 
-        <label for="date">Date du match :</label>
-            <input type="date" name="date"
+        <label for="date" id="labD">Date du match :</label>
+            <input type="date" id="chD" class="champ" name="date"
                 <?php
                 pr_date_match();
                 ?>
             >
             <br>
-            <label for="heure">Heure du match :</label>
-            <input type="time" name="heure"
+            <label for="heure" id="labH" >Heure du match :</label>
+            <input type="time" id="chH" class="champ" name="heure"
                 <?php
                 pr_heure_match();
                 ?>
             >
             <br>
-            <label for="equipe_adverse">Equipe adverse :</label>
-            <input type="text" name="equipe_adverse" maxlength="30"
+            <label for="equipe_adverse" id="labE">Equipe adverse :</label>
+            <input type="text" id="chE"name="equipe_adverse"class="champ"  maxlength="30"
                 <?php
                 pr_equipe_adverse();
                 ?>
             >
             <br>
-            <input type="radio" name="lieu_rencontre" value="Domicile"
-                <?php
-                pr_lieu_match_dom();
-                ?>
-            >
-            <label for="Domicile">Domicile</label>
+            <label id="labL">Lieu de rencontre : </label>
+            <div id="radD">
+                <input type="radio" id="radD" name="lieu_rencontre" value="Domicile"
+                    <?php
+                    pr_lieu_match_dom();
+                    ?>
+                >
+                <label for="Domicile" >Domicile</label>
+            </div>
             <br>
-            <input type="radio" name="lieu_rencontre" value="Exterieur"
-                <?php
-                pr_lieu_match_ext();
-                ?>
-            >
-            <label for="Exterieur">Exterieur</label>
+            <div id="radE">
+                <input type="radio" name="lieu_rencontre" value="Exterieur"
+                    <?php
+                    pr_lieu_match_ext();
+                    ?>
+                >
+                <label for="Exterieur">Exterieur</label>
+            </div>
             <br>
             <input type="text" hidden name="Id_match"
                 <?php
                 pr_id_match();
                 ?>
             >
-            <input type="submit" value="valider">
+            <a href="./matchs.php" id="annuler">
+                            <button>Annuler</button>
+            </a>
+            <input type="submit" id="valider" value="valider">
             </form>
-        <!-- <form action="./match_formulaire.php" method="POST">
-            <h1>Ajouter un nouveau match :</h1>
-            
 
-        </form> -->
+
     </main>
 </div>
+
+<?php
+    include_once("../footer.php");
+?>
 </body>
 
 </html>

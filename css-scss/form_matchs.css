@@ -1,4 +1,114 @@
 form {
+  display: -ms-grid;
+  display: grid;
+  padding: 50px;
+  padding-right: 20%;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+  -ms-grid-rows: calc(100%/6) calc(100%/6) calc(100%/6) calc(100%/6) calc(100%/6) calc(100%/6);
+      grid-template-rows: calc(100%/6) calc(100%/6) calc(100%/6) calc(100%/6) calc(100%/6) calc(100%/6);
+      grid-template-areas: "labD chD" "labH chH" "labE chE" "labL radD" ". radE" "ann val";
+  position: relative;
+  width: 90%;
+  left: 5%;
+}
+
+.champ {
+  width: 300px;
+}
+
+#labD {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: labD;
+}
+
+#labH {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: labH;
+}
+
+#labE {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: labE;
+}
+
+#labL {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: labL;
+}
+
+#chD {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: chD;
+}
+
+#chH {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: chH;
+}
+
+#chE {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: chE;
+}
+
+#radD {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  grid-area: radD;
+}
+
+#radE {
+  -ms-grid-row: 5;
+  -ms-grid-column: 2;
+  grid-area: radE;
+}
+
+#valider {
+  -ms-grid-row: 6;
+  -ms-grid-column: 2;
+  grid-area: val;
+  width: 120px;
+  position: relative;
+  left: 20%;
+  height: 45px;
+  border: 1px solid #BA9FCB;
+  border-radius: 10px;
+  background-color: #9673ab;
+  color: white;
+  cursor: pointer;
+  -webkit-box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.299);
+          box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.299);
+}
+
+#annuler {
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  grid-area: ann;
+  position: relative;
+  left: 15%;
   display: block;
+  place-self: end;
+  padding-right: 30px;
+}
+
+#annuler button {
+  pointer-events: none;
+  width: 120px;
+  height: 45px;
+  border: 1px solid #a4a3a5;
+  border-radius: 10px;
+  background-color: #b7b4b8;
+  color: white;
+  cursor: pointer;
+  -webkit-box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.299);
+          box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.299);
 }
 /*# sourceMappingURL=form_matchs.css.map */

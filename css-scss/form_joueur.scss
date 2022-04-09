@@ -186,6 +186,7 @@ form{
     place-self: end;
     padding-right: 30px;
     button{
+        pointer-events: none;
         width:120px;
         height:45px;
         border:1px solid rgb(164, 163, 165);

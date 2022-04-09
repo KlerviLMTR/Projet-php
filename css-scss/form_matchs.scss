@@ -1,12 +1,83 @@
-form{
+form {
+    display: grid;
+    padding: 50px;
+    padding-right:20%;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: calc(100%/6) calc(100%/6) calc(100%/6) calc(100%/6) calc(100%/6) calc(100%/6);
+    grid-template-areas: "labD chD"
+                         "labH chH"
+                        "labE chE"
+                        "labL radD"
+                        ". radE"
+                        "ann val";
+    position: relative;
+    width: 90%;
+    left:5%;
+  }
+.champ{
+    width:300px;
+}
+
+  #labD {
+    grid-area:labD;
+  }
+  #labH {
+    grid-area:labH;
+  }
+  #labE{
+    grid-area:labE;
+  }
+  #labL {
+    grid-area:labL;
+  }
+
+  #chD{
+    grid-area:chD;  
+  }
+  #chH{
+    grid-area:chH;  
+  }
+  #chE{
+    grid-area:chE;  
+  }
+  #radD{
+    grid-area:radD;  
+  }
+  #radE{
+    grid-area:radE;  
+  }
+
+
+#valider{
+    grid-area:val;
+    width:120px;
+    position: relative;
+    left:20%;
+    height:45px;
+    border:1px solid #BA9FCB;
+    border-radius: 10px;
+    background-color:#9673ab ;
+    color:white;
+    cursor: pointer;
+    box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.299);
+}
+
+#annuler{
+    grid-area: ann;
+    position: relative;
+    left:15%;
     display: block;
-    // grid-template-columns: 200px;
-    // grid-template-rows: 20px 20px 20px 20px 20px;
-    // grid-template-areas: 
-    // "labelDate date"
-    // "labelHeure heure"
-    // "labelAdversaires adversaires"
-    // "lieu"
-    // "valider"
-    // ;
+    place-self: end;
+    padding-right: 30px;
+    button{
+        pointer-events: none;
+        width:120px;
+        height:45px;
+        border:1px solid rgb(164, 163, 165);
+        border-radius: 10px;
+        background-color:#b7b4b8 ;
+        color:white;
+        cursor: pointer;
+        box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.299);
+    }
 }

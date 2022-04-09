@@ -10,7 +10,8 @@ include_once('./fonctions_match.php');
     <div id="main_cont">
         <main>
             
-            <h1>Liste des matchs</h1>
+            <h1>Liste des matchs :</h1>
+            <hr id="main_sep">
             <a href="./match_formulaire.php">Ajouter un match</a>
             <br><br>
             <?php
