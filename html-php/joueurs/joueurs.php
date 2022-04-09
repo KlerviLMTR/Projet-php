@@ -47,21 +47,23 @@
                 if(!empty($_POST['recherche'])) {
                     $sql="SELECT * FROM joueur WHERE ";
                     $symb = " ";
-                    $tab = explode($symb, $_POST['recherche']);
+                    $tab = explode($symb, trim($_POST['recherche']));
                     $cpt = 1;
-
-                    foreach($tab as $mot) {
+                    $search_data;
+                    foreach($tab as $mot) {                     
                         if (!($cpt == sizeof($tab))) {
-                            $sql.='UPPER(nom) like UPPER(\'%'.$mot.'%\') OR UPPER(prenom) like UPPER(\'%'.$mot.'%\') OR UPPER(poste_prefere) like UPPER(\'%'.$mot.'%\') OR 
-                                UPPER(statut) like UPPER(\'%'.$mot.'%\') OR ';
+                            $sql.='UPPER(nom) like UPPER(:a'.$cpt.') OR UPPER(prenom) like UPPER(:a'.$cpt.') OR UPPER(poste_prefere) like UPPER(:a'.$cpt.') OR 
+                                UPPER(statut) like UPPER(:a'.$cpt.') OR ';
                         } else {
-                            $sql.='UPPER(nom) like UPPER(\'%'.$mot.'%\') OR UPPER(prenom) like UPPER(\'%'.$mot.'%\') OR UPPER(poste_prefere) like UPPER(\'%'.$mot.'%\') OR 
-                                UPPER(statut) like UPPER(\'%'.$mot.'%\')';
+                            $sql.='UPPER(nom) like UPPER(:a'.$cpt.') OR UPPER(prenom) like UPPER(:a'.$cpt.') OR UPPER(poste_prefere) like UPPER(:a'.$cpt.') OR 
+                                UPPER(statut) like UPPER(:a'.$cpt.')';
                         }
+                        $search_data['a'.$cpt] = "%$mot%";
                         $cpt++;
                     }
+
                     $prep = $pdo->prepare($sql);
-                    $prep->execute();
+                    $prep->execute($search_data);
                     $resultat = $prep->fetchAll(PDO::FETCH_ASSOC);
 
                     if (empty($resultat)) {
