@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 08 avr. 2022 à 18:02
+-- Généré le : sam. 09 avr. 2022 à 13:07
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -38,9 +38,7 @@ CREATE TABLE IF NOT EXISTS `authentification` (
 --
 
 INSERT INTO `authentification` (`identifiant`, `mdp`) VALUES
-('a', 'c4ca4238a0b923820dcc509a6f75849b'),
-('b', '1'),
-('b', '1');
+('tornados', 'a67d5e95c47d9dd5604575e4f0772bea');
 
 -- --------------------------------------------------------
 
