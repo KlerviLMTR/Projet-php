@@ -1,0 +1,214 @@
+form{
+    position: relative;
+    width: 90%;
+    left:5%;
+    //padding: 40px 100px 40px 60px;
+   // border: 1px solid rgb(141, 82, 168);
+    border-radius: 30px;
+    box-shadow: 2px 2px 20px 1px rgba(179, 149, 149, 0.299);
+
+    display: grid;
+    grid-template-columns: 25% 46% 25%;
+    grid-template-rows: calc(80%/11) calc(80%/11) calc(80%/11) calc(80%/11) calc(80%/11) calc(80%/11) calc(80%/11) calc(80%/11) calc(80%/11) calc(80%/11);
+    grid-template-areas: "labN chN titreimg"
+                        "labPr chPr img"
+                        "labL chL img"
+                        "labD chD img"
+                        "labT chT img"
+                        "labP chP img"
+                        "labPos radA img"
+                        ". radP impimg"
+                        ". radB boutonimp"
+                        ". radG ."
+                        ". annuler valider";
+    row-gap: 2%;
+    column-gap: 2%;
+    padding: 40px 30px;
+
+    label{
+        grid-area:label;
+        font-family: 'Amatic SC', cursive;        //font-weight: bold;
+        font-size: 1.2em;
+        flex:1;
+        text-align: end;
+        padding : 5px 20px;
+
+    }
+}
+
+#labPos{
+    font-family: 'Amatic SC', cursive;   
+    grid-area:labPos;
+    font-size: 1.2em;
+    justify-self:end;
+    padding : 5px 20px;
+
+}
+
+#labN{
+    grid-area:labN;
+}
+#labPr{
+    grid-area:labPr;
+}
+#labL{
+    grid-area:labL;
+}
+#labD{
+    grid-area:labD;
+}
+#labT{
+    grid-area: labT;
+}
+#labP{
+    grid-area: labP;
+}
+
+#chPr{
+    grid-area:chPr;
+}
+
+#chL{
+    grid-area:chL;
+}
+#chD{
+    grid-area:chD;
+}
+
+#chP{
+    grid-area:chP;
+}
+#chT{
+    grid-area:chT;
+}
+
+#radA{
+    grid-area: radA;
+    align-self:center;
+    padding-top:10px;
+
+    label{
+        font-family: 'Raleway', sans-serif;
+        font-size: 1em;
+
+    }
+}
+#radP{
+    padding-bottom:2px;
+    grid-area: radP;
+    align-self:end;
+    label{
+        font-family: 'Raleway', sans-serif;
+        font-size: 1em;
+    }
+}
+#radB{
+    grid-area: radB;
+    padding-bottom:5px;
+
+    align-self:center;
+
+    label{
+        font-family: 'Raleway', sans-serif;
+        font-size: 1em;
+
+    }
+}
+#radG{
+    grid-area: radG;
+    margin-bottom:16px;
+    align-self:start;
+
+    label{
+        font-family: 'Raleway', sans-serif;
+        font-size: 1em;
+
+    }
+}
+
+#titre_img{
+    grid-area: titreimg;
+    place-self:start;
+    padding-left:0;
+}
+
+#img{
+    grid-area: img;
+    border:4px solid rgb(148, 108, 166);
+}
+
+.impimg{
+    grid-area: impimg;
+    place-self:start;
+    padding-left:0;
+    padding-top:7px;
+
+}
+#boutonimp{
+    margin-top:10px;
+    input{
+        opacity: 0;
+    }
+    grid-area: boutonimp;
+    width:147px;
+    text-align: center;
+ //   padding-top: 10px;
+    height:28px;
+    border:1px solid #BA9FCB;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.8em;
+    border-radius: 20px;
+    background-color:#c19ed5 ;
+    color:white;
+
+    cursor: pointer;
+    box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.299);
+}
+#valider{
+    grid-area:valider;
+    width:120px;
+    position: relative;
+    left:20%;
+    height:45px;
+    border:1px solid #BA9FCB;
+    border-radius: 10px;
+    background-color:#9673ab ;
+    color:white;
+    cursor: pointer;
+    box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.299);
+}
+
+#annuler{
+    grid-area: annuler;
+    position: relative;
+    left:15%;
+    display: block;
+    place-self: end;
+    padding-right: 30px;
+    button{
+        width:120px;
+        height:45px;
+        border:1px solid rgb(164, 163, 165);
+        border-radius: 10px;
+        background-color:#b7b4b8 ;
+        color:white;
+        cursor: pointer;
+        box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.299);
+    }
+}
+
+.champ{
+    padding-left:10px;   
+    padding-right:10px;
+    position: relative;
+    width:70%;
+    border-radius: 5px;
+    border: 1px solid purple;
+    outline: none;
+}
+.champ:focus{
+    background-color: rgb(215, 208, 215);
+    border: 2.5px solid rgb(158, 42, 158);
+
+}
+

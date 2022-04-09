@@ -1,0 +1,271 @@
+form {
+  position: relative;
+  width: 90%;
+  left: 5%;
+  border-radius: 30px;
+  -webkit-box-shadow: 2px 2px 20px 1px rgba(179, 149, 149, 0.299);
+          box-shadow: 2px 2px 20px 1px rgba(179, 149, 149, 0.299);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 25% 46% 25%;
+      grid-template-columns: 25% 46% 25%;
+  -ms-grid-rows: calc(80%/11) calc(80%/11) calc(80%/11) calc(80%/11) calc(80%/11) calc(80%/11) calc(80%/11) calc(80%/11) calc(80%/11) calc(80%/11);
+      grid-template-rows: calc(80%/11) calc(80%/11) calc(80%/11) calc(80%/11) calc(80%/11) calc(80%/11) calc(80%/11) calc(80%/11) calc(80%/11) calc(80%/11);
+      grid-template-areas: "labN chN titreimg" "labPr chPr img" "labL chL img" "labD chD img" "labT chT img" "labP chP img" "labPos radA img" ". radP impimg" ". radB boutonimp" ". radG ." ". annuler valider";
+  row-gap: 2%;
+  -webkit-column-gap: 2%;
+          column-gap: 2%;
+  padding: 40px 30px;
+}
+
+form label {
+  grid-area: label;
+  font-family: 'Amatic SC', cursive;
+  font-size: 1.2em;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: end;
+  padding: 5px 20px;
+}
+
+#labPos {
+  font-family: 'Amatic SC', cursive;
+  -ms-grid-row: 7;
+  -ms-grid-column: 1;
+  grid-area: labPos;
+  font-size: 1.2em;
+  -ms-grid-column-align: end;
+      justify-self: end;
+  padding: 5px 20px;
+}
+
+#labN {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: labN;
+}
+
+#labPr {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: labPr;
+}
+
+#labL {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: labL;
+}
+
+#labD {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: labD;
+}
+
+#labT {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: labT;
+}
+
+#labP {
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  grid-area: labP;
+}
+
+#chPr {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: chPr;
+}
+
+#chL {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: chL;
+}
+
+#chD {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  grid-area: chD;
+}
+
+#chP {
+  -ms-grid-row: 6;
+  -ms-grid-column: 2;
+  grid-area: chP;
+}
+
+#chT {
+  -ms-grid-row: 5;
+  -ms-grid-column: 2;
+  grid-area: chT;
+}
+
+#radA {
+  -ms-grid-row: 7;
+  -ms-grid-column: 2;
+  grid-area: radA;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding-top: 10px;
+}
+
+#radA label {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1em;
+}
+
+#radP {
+  padding-bottom: 2px;
+  -ms-grid-row: 8;
+  -ms-grid-column: 2;
+  grid-area: radP;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+}
+
+#radP label {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1em;
+}
+
+#radB {
+  -ms-grid-row: 9;
+  -ms-grid-column: 2;
+  grid-area: radB;
+  padding-bottom: 5px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+#radB label {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1em;
+}
+
+#radG {
+  -ms-grid-row: 10;
+  -ms-grid-column: 2;
+  grid-area: radG;
+  margin-bottom: 16px;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+}
+
+#radG label {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1em;
+}
+
+#titre_img {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: titreimg;
+  place-self: start;
+  padding-left: 0;
+}
+
+#img {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 6;
+  -ms-grid-column: 3;
+  grid-area: img;
+  border: 4px solid #946ca6;
+}
+
+.impimg {
+  -ms-grid-row: 8;
+  -ms-grid-column: 3;
+  grid-area: impimg;
+  place-self: start;
+  padding-left: 0;
+  padding-top: 7px;
+}
+
+#boutonimp {
+  margin-top: 10px;
+  -ms-grid-row: 9;
+  -ms-grid-column: 3;
+  grid-area: boutonimp;
+  width: 147px;
+  text-align: center;
+  height: 28px;
+  border: 1px solid #BA9FCB;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.8em;
+  border-radius: 20px;
+  background-color: #c19ed5;
+  color: white;
+  cursor: pointer;
+  -webkit-box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.299);
+          box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.299);
+}
+
+#boutonimp input {
+  opacity: 0;
+}
+
+#valider {
+  -ms-grid-row: 11;
+  -ms-grid-column: 3;
+  grid-area: valider;
+  width: 120px;
+  position: relative;
+  left: 20%;
+  height: 45px;
+  border: 1px solid #BA9FCB;
+  border-radius: 10px;
+  background-color: #9673ab;
+  color: white;
+  cursor: pointer;
+  -webkit-box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.299);
+          box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.299);
+}
+
+#annuler {
+  -ms-grid-row: 11;
+  -ms-grid-column: 2;
+  grid-area: annuler;
+  position: relative;
+  left: 15%;
+  display: block;
+  place-self: end;
+  padding-right: 30px;
+}
+
+#annuler button {
+  width: 120px;
+  height: 45px;
+  border: 1px solid #a4a3a5;
+  border-radius: 10px;
+  background-color: #b7b4b8;
+  color: white;
+  cursor: pointer;
+  -webkit-box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.299);
+          box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.299);
+}
+
+.champ {
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  width: 70%;
+  border-radius: 5px;
+  border: 1px solid purple;
+  outline: none;
+}
+
+.champ:focus {
+  background-color: #d7d0d7;
+  border: 2.5px solid #9e2a9e;
+}
+/*# sourceMappingURL=form_joueur.css.map */
