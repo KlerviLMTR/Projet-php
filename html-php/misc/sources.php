@@ -28,7 +28,7 @@ include_once('../nav.php');
                      <h4>Logos Tutshill :</h4> <a href="https://fr.freepik.com/"  target="_blank">Freepiks</a> 
                 </div>
                 <div class="flex">
-                     <h4>Icones diverses :</h4> <a href="https://uxwing.com/?s=software"  target="_blank">uxwing</a>
+                     <h4>Icones diverses :</h4> <a href="https://uxwing.com/?s=software"  target="_blank">Uxwing</a>
                 </div>
             </div>
         </main>
