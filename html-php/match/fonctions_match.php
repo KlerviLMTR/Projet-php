@@ -1,43 +1,43 @@
 <?php
-    function pr_id_match(){
-        if (isset($_GET['v1'])){
-            echo 'value='.$_GET['v1'];
+    function pr_id_match($match){
+        if (isset($match)){
+            echo 'value="'.$match['0']['0'].'"';
         }
     }
 
-    function pr_date_match(){
-        if (isset($_GET['v2'])){
-            echo 'value='.$_GET['v2'];
+    function pr_date_match($match){
+        if (isset($match)){
+            echo 'value="'.$match['0']['1'].'"';
         }
     }
 
-    function pr_heure_match(){
-        if (isset($_GET['v3'])){
-            echo 'value='.$_GET['v3'];
+    function pr_heure_match($match){
+        if (isset($match)){
+            echo 'value="'.$match['0']['2'].'"';
         }
     }
 
-    function pr_lieu_match_dom(){
+    function pr_lieu_match_dom($match){
 
-        if (isset($_GET['v4'])){
-            if ($_GET['v4'] == 'domicile'){
+        if (isset($match)){
+            if ($match['0']['4'] == 'domicile'){
                 echo 'checked';
             }     
         }
     }
 
-    function pr_lieu_match_ext(){
+    function pr_lieu_match_ext($match){
 
-        if (isset($_GET['v4'])){
-            if ($_GET['v4'] == 'exterieur'){
+        if (isset($match)){
+            if ($match['0']['4'] == 'exterieur'){
                 echo 'checked';
             }     
         }
     }
 
-    function pr_equipe_adverse(){
-        if (isset($_GET['v7'])){
-            echo 'value='.$_GET['v7'];
+    function pr_equipe_adverse($match){
+        if (isset($match)){
+            echo 'value="'.$match['0']['3'].'"';
         }
     }
 
@@ -62,7 +62,7 @@
     
                 $decl = $pdo -> prepare($sql_modif);
                 $decl -> execute($donnees);
-                echo 'modifOk';
+                header('Location: matchs.php');
             }
             else {
                 $sql = "insert into match_ (date_match, heure_match, equipe_adverse, lieu) values ( :date, :heure ,:equipe_adv, :lieu);";
@@ -124,52 +124,70 @@
             echo '
             <div class="ligne_grille">
     
-            
+                <hr class="hr">
                 <div class="date">
-                    <p>Date du match : '.$match["date_match"].' '.$match["heure_match"].'</p>
+                     <h4>Date du match : </h4><p>'.$match["date_match"].' </p>
                 </div>
-        
+                <div class="heure">
+                    <h4>Heure du match :</h4><p> '.$match["heure_match"].'</p>
+                </div>
+    
                 <div class="equipe">
-                    <p>Equipe adverse : '.$match["equipe_adverse"].'</p>
+                    <h2>Equipe adverse :</h2><p> '.$match["equipe_adverse"].'</p>
                 </div>
         
         
                 <div class="lieu">
+                    <h4>Lieu :</h4>
                     <p>'.$match["lieu"].'</p>
                 </div>';
         
                 if (empty($match["score_equipe"]) || empty($match["score_adverse"])) {
-                    echo 'Score à venir';
+                echo '<div class="score_equipe"><p class="dec">༜</p><p class="sc">Score à venir</p><p class="dec">༜</p></div>';
                 } else {
                     echo 
                     '<div class="score_equipe">
-                        <p>Score : '.$match["score_equipe"].' - '.$match["score_adverse"].'</p>
+                        <h4>Score :</h4> <p class="scM"> '.$match["score_equipe"].' - '.$match["score_adverse"].'</p>
                     </div>';
                 }
         
         
                 echo '
-                <div class="footer">
-                    <a href="./match_formulaire.php?v1='.$match["Id_match_"].'&v2='.$match["date_match"].'&v3='.$match["heure_match"].'&v4='.$match["lieu"].'&v5='.$match["score_equipe"].'&v6='.$match["score_adverse"].'&v7='.$match["equipe_adverse"].'
-                    ">✎</a>
-                    <a href="./matchs.php?idsupp='.$match["Id_match_"].'">🗑</a>
-                    <a href="../selections/voir_selection_match?idmatch='.$match["Id_match_"].'">Voir la sélection de ce match</a>
-                </div>
-        
-                ';
+                <div class="footer">';
+                if($match["date_match"] >= date("Y-m-d")){
+                    echo '<a href="./match_formulaire.php?v1='.$match["Id_match_"].'&v2='.$match["date_match"].'&v3='.$match["heure_match"].'&v4='.$match["lieu"].'&v5='.$match["score_equipe"].'&v6='.$match["score_adverse"].'&v7='.$match["equipe_adverse"].'" class="modif">✎</a>
+                    ';
+                }
+                echo'<a href="./matchs.php?idsupp='.$match["Id_match_"].'" class="supp">🗑</a>';
 
+                    echo'
+                
+                </div>';
+
+                echo'
+
+                <a href="../selections/voir_selection_match?idmatch='.$match["Id_match_"].'" class="selection liens voirsel">
+                <img src="../../images-deco/eye-look.svg" alt="icone visionner" class="voir">Voir la sélection de ce match</a>';
+            
                 if($match["date_match"] < date("Y-m-d")){
-                    echo '<div class="joué">le match est passé.</div>';
+                   // echo '<div class="joué">le match est passé.</div>';
                     // echo '<a href="../selections/selection_match.php?idmatch='.$match["Id_match_"].'" id="ajout_selection">Ajout d\'une sélection</a>';
-                    echo '<form action="matchs.php" method="post" id="ajout_score">
-                    <input type="number" name="score_equipe">
-                    <input type="number" name="score_adversaire">
+                    echo '<form action="matchs.php" method="post" class="ajout_score">
+                    <h4 >Ajouter un score :</h4>
+                    <label for="score_equipe" class="lab_eq">Score équipe :</label>
+                    <input type="number" name="score_equipe" class="champ ch2">
+                    <div class="sc_adv">
+                        <label for="score_adversaire" >Score adversaire :</label>
+                        <input type="number" name="score_adversaire" class="champ">
+                    </div>
                     <input type="text" name="id_match" value="'.$match["Id_match_"].'" hidden>
-                    <input type="submit">
+                    <input type="submit" class="enr" value="enregistrer">
                     </form>  ';
                 }else{
-                    echo '<div class="joué">le match est à venir.</div>';
-                    echo '<a href="../selections/selection_match.php?idmatch='.$match["Id_match_"].'" id="ajout_selection">Ajout d\'une sélection</a>';
+                    //echo '<div class="joué">le match est à venir.</div>';
+                    echo '<a href="../selections/selection_match.php?idmatch='.$match["Id_match_"].'"  class="ajout_selection liens">
+                    <img src="../../images-deco/add.svg" alt="icone ajout" class="icones">
+                    Ajouter une sélection</a>';
                 }
 
             echo'</div><br>';
@@ -177,3 +195,4 @@
     }
 
 ?>
+

@@ -1,0 +1,53 @@
+.grille{
+    width: 45%;
+    float: left;
+    grid-template-columns: 34% 33% 33%;
+    grid-template-rows: 25% 2% 25% 20% 28%;
+    grid-template-areas: 
+    "poste poste poste"
+    "sep sep sep"
+    "img taille note"
+    "img poids titularisation"
+    "comm comm comm";
+    padding-bottom: 20px;
+}
+
+h2{
+    display: block;
+    width: 100%;
+}
+.img{
+    grid-area:img;
+    #cadre_portrait{
+        left: -5px;
+        top:-5px;
+        height: 110px;
+
+    }
+}
+select{
+    width: 100px;
+    top:0;
+}
+
+.taille{
+    grid-area: taille;
+}
+.sep_grille{
+    grid-area: sep;
+}
+// .nom{
+//     grid-area: "";
+// }
+.commentaires{
+    grid-area: comm;
+}
+.note{
+    grid-area: note;
+}
+.poids{
+    grid-area: poids;
+}
+.poste{
+    grid-area: poste;
+}

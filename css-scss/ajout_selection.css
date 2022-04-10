@@ -1,0 +1,73 @@
+.grille {
+  width: 45%;
+  float: left;
+  -ms-grid-columns: 34% 33% 33%;
+      grid-template-columns: 34% 33% 33%;
+  -ms-grid-rows: 25% 2% 25% 20% 28%;
+      grid-template-rows: 25% 2% 25% 20% 28%;
+      grid-template-areas: "poste poste poste" "sep sep sep" "img taille note" "img poids titularisation" "comm comm comm";
+  padding-bottom: 20px;
+}
+
+h2 {
+  display: block;
+  width: 100%;
+}
+
+.img {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: img;
+}
+
+.img #cadre_portrait {
+  left: -5px;
+  top: -5px;
+  height: 110px;
+}
+
+select {
+  width: 100px;
+  top: 0;
+}
+
+.taille {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: taille;
+}
+
+.sep_grille {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: sep;
+}
+
+.commentaires {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: comm;
+}
+
+.note {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: note;
+}
+
+.poids {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  grid-area: poids;
+}
+
+.poste {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: poste;
+}
+/*# sourceMappingURL=ajout_selection.css.map */

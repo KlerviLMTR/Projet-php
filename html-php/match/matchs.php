@@ -2,8 +2,8 @@
 include_once('../session.php');
 include_once('../header.php');
 echo '<link rel="stylesheet" href="../../css-scss/template.css">
-<link rel="stylesheet" href="../../css-scss/match.css">
-<link rel="stylesheet" href="../../css-scss/polices.css">';
+<link rel="stylesheet" href="../../css-scss/polices.css">
+<link rel="stylesheet" href="../../css-scss/matchs.css">';
 include_once('../nav.php');
 include_once('./fonctions_match.php');
 ?>
@@ -12,7 +12,9 @@ include_once('./fonctions_match.php');
             
             <h1>Liste des matchs :</h1>
             <hr id="main_sep">
-            <a href="./match_formulaire.php">Ajouter un match</a>
+            <a href="match_formulaire.php" id="form">
+                    <img src="../../images-deco/add.svg" alt="icone ajouter">
+                    Ajouter un match</a>
             <br><br>
             <?php
                 include_once('../config.php');
@@ -29,6 +31,9 @@ include_once('./fonctions_match.php');
             ?>
         </main>
     </div>
+    <?php
+    include_once("../footer.php");
+?>
     
 </body>
 </html>

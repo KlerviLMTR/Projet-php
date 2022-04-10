@@ -2,15 +2,16 @@ form {
   display: -ms-grid;
   display: grid;
   padding: 50px;
-  padding-right: 20%;
-  -ms-grid-columns: 50% 50%;
-      grid-template-columns: 50% 50%;
+  padding-right: 5%;
+  -ms-grid-columns: 30% 30% 20% 20%;
+      grid-template-columns: 30% 30% 20% 20%;
   -ms-grid-rows: calc(100%/6) calc(100%/6) calc(100%/6) calc(100%/6) calc(100%/6) calc(100%/6);
       grid-template-rows: calc(100%/6) calc(100%/6) calc(100%/6) calc(100%/6) calc(100%/6) calc(100%/6);
-      grid-template-areas: "labD chD" "labH chH" "labE chE" "labL radD" ". radE" "ann val";
+      grid-template-areas: "labD chD . ." "labH chH . ." "labE chE . . " "labL radD . ." ". radE . ."  ". . ann val";
   position: relative;
   width: 90%;
   left: 5%;
+  row-gap: 10px;
 }
 
 .champ {
@@ -60,6 +61,7 @@ form {
 }
 
 #radD {
+  margin-top: 8px;
   -ms-grid-row: 4;
   -ms-grid-column: 2;
   grid-area: radD;
@@ -72,12 +74,13 @@ form {
 }
 
 #valider {
+  left: 0px;
+  top: -30px;
   -ms-grid-row: 6;
-  -ms-grid-column: 2;
+  -ms-grid-column: 4;
   grid-area: val;
   width: 120px;
   position: relative;
-  left: 20%;
   height: 45px;
   border: 1px solid #BA9FCB;
   border-radius: 10px;
@@ -89,14 +92,12 @@ form {
 }
 
 #annuler {
+  top: -30px;
   -ms-grid-row: 6;
-  -ms-grid-column: 1;
+  -ms-grid-column: 3;
   grid-area: ann;
   position: relative;
-  left: 15%;
   display: block;
-  place-self: end;
-  padding-right: 30px;
 }
 
 #annuler button {
