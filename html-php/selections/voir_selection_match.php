@@ -24,9 +24,9 @@ $resSelection = $stmt->fetchAll();
     <h1>Liste des joueurs pour la sélection :</h1>
     <hr id="main_sep">
 <?php
-echo '<div id="selection"> Voici la sélection du match '.$resSelection['0']['12'].' joué contre l\'équipe '.$resSelection['0']['18'].' s\'effectuant en '.$resSelection['0']['19'].' :<br>
-Date du match : <p>'.$resSelection['0']['16'].'</p><br>
-Heure du match : <p>'.$resSelection['0']['17'].'</p><br>';
+echo '<div id="selection"> Voici la sélection du match joué contre l\'équipe '.$resSelection['0']['18'].' s\'effectuant en '.$resSelection['0']['19'].' :<br>
+<h4>Date du match :</h4> <p>'.$resSelection['0']['16'].'</p><br>
+<h4>Heure du match :</h4> <p>'.$resSelection['0']['17'].'</p><br>';
 if($resSelection['0']['16'] < date("Y-m-d")){
     echo 'match terminé. ';
     if(!empty($resSelection['0']['20']) && !empty($resSelection['0']['20'])){
@@ -35,7 +35,7 @@ if($resSelection['0']['16'] < date("Y-m-d")){
         echo 'Pas de score ajouté pour le moment';
     }
 }else{
-    echo 'match à venir';
+    echo '<h2>match à venir</h2>';
 }
 
 echo '</div></br></br>';

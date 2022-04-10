@@ -49,7 +49,6 @@
             
         
                 foreach ($chemin_img as $ligne){
-                    echo $ligne['chemin_photo'];
                     unlink ($ligne['chemin_photo']);
                 }
         

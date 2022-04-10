@@ -81,7 +81,8 @@
 
                
                     <label for="licence" id="labL">Numéro de licence :</label>
-                    <input class="champ" type="tel" name="licence" maxlength="8"  id="chL" minlength="8"
+                    <input class="champ" type="tel" name="licence" maxlength="8"  id="chL" minlength="8" pattern="^[0-9]{8,8}$"
+                    title="Merci d'ajouter un numéro de licence composé de 8 chiffres"
                     <?php
                         pr_licence(); 
                     ?>
@@ -96,14 +97,16 @@
                 
 
                     <label for="taille" id="labT">Taille :</label>
-                    <input class="champ" type="tel" name="taille" id="chT" minlength="2" maxlength="3" 
+                    <input class="champ" type="tel" name="taille" id="chT" minlength="2" maxlength="3" pattern="^[0-9]{2,3}$"
+                    title="taille en cm entre 2 et 3 chiffres"
                     <?php
                         pr_taille();
                     ?>
                     >
 
                     <label for="poids" id="labP">Poids :</label>
-                    <input class="champ" type="tel" name="poids" id="chP" minlength="2" maxlength="3" 
+                    <input class="champ" type="tel" name="poids" id="chP" minlength="2" maxlength="3" pattern="^[0-9]{2,3}$"
+                    title="poids en kg entre 2 et 3 chiffres"
                     <?php
                         pr_poids();
                     ?>

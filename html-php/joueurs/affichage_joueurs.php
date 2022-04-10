@@ -18,7 +18,7 @@
             <hr class="sep_grille">
 
             <div class="nom">
-                <p>'.$joueur["prenom"].' '.$joueur["nom"].'</p>
+                <p>'.$joueur["nom"].' '.$joueur["prenom"].'</p>
             </div>
 
             <div class="dateN">

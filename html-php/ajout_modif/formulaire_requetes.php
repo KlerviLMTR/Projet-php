@@ -41,6 +41,7 @@ if (
 
                 $decl = $pdo->prepare($sql);
                 $decl->execute($donnees);
+                header("Location: ../joueurs/joueurs.php");
 
             }
             //Si l'import a échoué, afficher un message
@@ -122,6 +123,7 @@ if (
         if(!isset($photo_nok)){
             $decl = $pdo -> prepare($modifier_sql);
             $decl -> execute($donnees_modif);
+            header("Location: ../joueurs/joueurs.php");
         }           
     } 
 }

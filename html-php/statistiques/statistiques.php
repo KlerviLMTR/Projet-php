@@ -4,10 +4,13 @@
 include_once('../header.php');
 echo '<link rel="stylesheet" href="../../css-scss/template.css">
 <link rel="stylesheet" href="../../css-scss/polices.css">
-<link rel="stylesheet" href="../../css-scss/joueurs.css">';
+<link rel="stylesheet" href="../../css-scss/joueurs.css">
+<link rel="stylesheet" href="../../css-scss/statistiques.css">';
+
 include_once('../nav.php');
 include_once('../config.php');
 include_once('../joueurs/fonctions_joueur.php');
+
 
     //Nombre de matchs joués dont le résultat a été saisi :
     $sql = "SELECT count(*) FROM match_
@@ -78,13 +81,15 @@ include_once('../joueurs/fonctions_joueur.php');
         
 
     <h1>Statistiques</h1><br>
-    <h2>Matchs</h2><br>
-    Nombre total de matchs joués : <?php echo $nbMatchs ?><br>
-    Gagnés : <?php echo round($prctMatchsGagnes,2) ?> %<br>
-    Perdus : <?php echo round($prctMatchsPerdus,2) ?> %<br>
-    Nuls : <?php echo round($prctMatchsNuls,2) ?> %<br>
-    <h2>Joueurs</h2><br>
-
+    <hr id="main_sep">
+    <div id="header">
+        <h2>Matchs :</h2><br><br>
+        <h4>- Nombre total de matchs joués :</h4> <p><?php echo $nbMatchs ?>%</p><br>
+        <h4>- Gagnés : </h4><p><?php echo round($prctMatchsGagnes,2) ?> %</p><br>
+        <h4>- Perdus :</h4><p><?php echo round($prctMatchsPerdus,2) ?> %</p><br>
+        <h4>- Nuls : </h4><p><?php echo round($prctMatchsNuls,2) ?> %</p><br><br><br>
+        <h2>Joueurs :</h2><br>
+    </div>
     <?php
 
         //Stats par joueurs
@@ -122,7 +127,7 @@ include_once('../joueurs/fonctions_joueur.php');
             <br class="sep_grille">
             <div class="poste">
                 <img src="../../images-deco/attribution-requise/IconFinder/'.afficher_img($joueur['poste_prefere']).'" alt="icone poste" height="50px" >
-                <h2 class="titres_carte">'.$joueur["poste_prefere"].'</h2>
+                <h2 class="titres_carte" id="titre_carte">'.$joueur["poste_prefere"].'</h2>
                 <img src="../../images-deco/attribution-requise/IconFinder/'.afficher_img($joueur['poste_prefere']).'" alt="icone poste" height="50px" >
 
             </div>
@@ -134,7 +139,7 @@ include_once('../joueurs/fonctions_joueur.php');
             </div>
 
             <div class="dateN">
-                <h4 class="titres_carte">Note :</h4>
+                <h4 class="titres_carte">Note moyenne :</h4>
                 <p>'.$joueur['performance'].'/5</p>
             </div>
 
@@ -163,21 +168,6 @@ include_once('../joueurs/fonctions_joueur.php');
             
         </div>';
 
-
-
-
-
-
-
-            //  echo "<b>".$joueur['nom']." ".$joueur['prenom']."</b><br>";
-            //  echo "Poste : ".$joueur['poste_prefere']."<br>";
-            //  echo "Statut : ".$joueur['statut']."<br>";
-            //  echo "Nombre de titularisations : ".$joueur['nb_tit']."<br>";
-            //  echo "Nombre de remplacements : ".$joueur['nb_remp']."<br>";
-            //  echo "Performance moyenne sur 5 : ".$joueur['performance']."<br>";
-            //  echo "Matchs gagnés : ".$joueur['pourc_match_gag']." %<br>";
-
-            //  echo "<br>";
  
          }
 
@@ -186,8 +176,11 @@ include_once('../joueurs/fonctions_joueur.php');
 
 
         </main>
-    </div>
 
+    </div>
+<?php
+    include_once("../footer.php");
+?>
     
 </body>
 </html>

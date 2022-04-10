@@ -30,13 +30,20 @@
 
             <h1>Liste des joueurs :</h1>
             <hr id="main_sep">
-            <a href="../ajout_modif/formulaire.php">Lien pour ajouter un joueur</a>
 
-            <form action="" method="POST">
-                Rechercher 
-                <input type="text" name="recherche" value="<?php if(!empty($_POST['recherche'])) echo $_POST['recherche'] ?>">
-                <input type="submit" value="Envoyer">
-            </form>
+            <div id="entete">
+                <a href="../ajout_modif/formulaire.php">
+                    <img src="../../images-deco/add.svg" alt="icone ajouter">
+                    Ajouter un joueur</a>
+
+                <form action="" method="POST">
+                    <p>Rechercher par mots-clefs :</p>
+                    <input type="text" id="champ"  name="recherche" value="<?php if(!empty($_POST['recherche'])) echo $_POST['recherche'] ?>">
+                    <button><a href="./joueurs.php" id="eff">✗</a></button>
+                    <input type="submit" id="val" value="✓">
+                </form>
+                
+            </div>
             
 
 
@@ -65,11 +72,10 @@
                     $resultat = $prep->fetchAll(PDO::FETCH_ASSOC);
 
                     if (empty($resultat)) {
-                        echo "Aucun résultat.<br>
-                                Vous pouvez effectuer une recherche par nom, prénom, poste ou statut.<br>
-                                <button onclick=\"location.href='./joueurs.php'\">Retour</button>";
-                    } else {  
-                        echo "<button onclick=\"location.href='./joueurs.php'\">Retour</button>";                      
+                        echo '<p id="null">Aucun résultat.</p><br>
+                                <p id="conseil">Vous pouvez effectuer une recherche par nom, prénom, poste ou statut.</p><br>
+                                ';
+                    } else {                    
                         //Affichage des joueurs trouvés :
                         include_once('affichage_joueurs.php');
                     }

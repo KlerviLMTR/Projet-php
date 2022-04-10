@@ -1,0 +1,73 @@
+.statut {
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 4;
+  grid-area: comm;
+  display: inline;
+}
+
+.statut p {
+  font-size: 1.1em;
+  display: inline;
+}
+
+.statut h4 {
+  display: inline;
+}
+
+.grille {
+  -ms-grid-columns: 25% 25% 25% 25%;
+      grid-template-columns: 25% 25% 25% 25%;
+      grid-template-areas: "poste poste poste poste " " hr hr hr hr" "photo nom nom nom" "photo dateN taille comm" "photo licence poids comm" "boutons boutons boutons boutons";
+}
+
+.nom {
+  position: relative;
+  left: -100px;
+}
+
+.titres_carte {
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+#titre_carte {
+  font-size: 1.8em;
+  font-weight: 700px;
+}
+
+p {
+  font-size: 1.1em;
+  display: inline;
+}
+
+#header * {
+  display: inline;
+}
+
+#header {
+  position: relative;
+  margin-bottom: 30px;
+  width: 90%;
+  left: 8%;
+  text-align: center;
+}
+
+#header h2 {
+  position: relative;
+  font-family: 'Amatic SC', cursive;
+  font-size: 2.2em;
+  font-weight: 700;
+  margin-bottom: 100px;
+}
+
+#header h4 {
+  padding-top: 160px;
+  font-family: 'Amatic SC', cursive;
+  font-size: 1.8em;
+}
+
+#header p {
+  font-size: 1.3em;
+}
+/*# sourceMappingURL=statistiques.css.map */

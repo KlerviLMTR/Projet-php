@@ -1,4 +1,109 @@
 @import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap");
+#entete {
+  width: 90%;
+  position: relative;
+  left: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#entete a {
+  font-family: 'Amatic SC', cursive;
+  font-size: 1.8em;
+  font-weight: 700;
+  -webkit-box-flex: 0.5;
+      -ms-flex: 0.5;
+          flex: 0.5;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+#entete a img {
+  padding-top: 10px 5px 0px 0px;
+  height: 30px;
+  -webkit-filter: invert(53%) sepia(15%) saturate(1014%) hue-rotate(234deg) brightness(90%) contrast(85%);
+          filter: invert(53%) sepia(15%) saturate(1014%) hue-rotate(234deg) brightness(90%) contrast(85%);
+}
+
+#entete form {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  text-align: right;
+}
+
+#entete form p {
+  font-family: 'Amatic SC', cursive;
+  font-size: 1.8em;
+  font-weight: 700;
+}
+
+#entete form #champ {
+  position: relative;
+  bottom: 5px;
+  width: 150px;
+  border: 1px solid purple;
+  border-radius: 5px;
+  height: 30px;
+  font-size: 1em;
+}
+
+#entete form #champ:focus {
+  border: 2px solid #9e2a9e;
+  background-color: #d7d0d7;
+  outline: none;
+  font-size: 1em;
+}
+
+#entete form button {
+  border: none;
+  background-color: white;
+  outline: none;
+}
+
+#entete form #eff {
+  position: relative;
+  top: -6px;
+  height: 35px;
+  padding-top: 3px;
+  margin-right: 5px;
+  display: block;
+  background-color: #948d94;
+  color: white;
+  border-radius: 20px;
+  position: relative;
+  width: 50px;
+  font-size: 1.4em;
+  -webkit-box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.123);
+          box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.123);
+}
+
+#entete form #val {
+  position: relative;
+  top: -3px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  height: 35px;
+  cursor: pointer;
+  border: none;
+  color: white;
+  -webkit-box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.13);
+          box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.13);
+  background-color: #9673ab;
+  padding-bottom: 2px;
+  border-radius: 20px;
+  position: relative;
+  width: 50px;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
 .grille {
   position: relative;
   width: 90%;
@@ -157,6 +262,7 @@
 }
 
 .commentaires textarea {
+  padding: 5px;
   margin-top: 5px;
   position: relative;
   width: 200px;
@@ -210,12 +316,12 @@ select:focus {
 .valider {
   position: relative;
   top: -19px;
-  width: 60px;
+  width: 65px;
   position: relative;
   height: 35px;
   left: 25px;
   border: 1px solid #BA9FCB;
-  border-radius: 120px;
+  border-radius: 12px;
   background-color: #9673ab;
   color: white;
   cursor: pointer;
@@ -233,5 +339,24 @@ textarea {
   font-weight: 700;
   font-size: 1.2em;
   letter-spacing: 1px;
+}
+
+#conseil {
+  padding-top: 20px;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  width: 90%;
+  margin-bottom: 100px;
+}
+
+#null {
+  margin-top: 150px;
+  width: 90%;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  font-size: 2.3em;
+  font-family: 'Amatic SC', cursive;
 }
 /*# sourceMappingURL=joueurs.css.map */

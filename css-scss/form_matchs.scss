@@ -1,18 +1,19 @@
 form {
     display: grid;
     padding: 50px;
-    padding-right:20%;
-    grid-template-columns: 50% 50%;
+    padding-right:5%;
+    grid-template-columns:30% 30% 20% 20%;
     grid-template-rows: calc(100%/6) calc(100%/6) calc(100%/6) calc(100%/6) calc(100%/6) calc(100%/6);
-    grid-template-areas: "labD chD"
-                         "labH chH"
-                        "labE chE"
-                        "labL radD"
-                        ". radE"
-                        "ann val";
+    grid-template-areas: "labD chD . ."
+                         "labH chH . ."
+                        "labE chE . . "
+                        "labL radD . ."
+                        ". radE . ." 
+                        ". . ann val";
     position: relative;
     width: 90%;
     left:5%;
+    row-gap: 10px;;
   }
 .champ{
     width:300px;
@@ -32,6 +33,7 @@ form {
   }
 
   #chD{
+      
     grid-area:chD;  
   }
   #chH{
@@ -41,6 +43,7 @@ form {
     grid-area:chE;  
   }
   #radD{
+    margin-top:8px;
     grid-area:radD;  
   }
   #radE{
@@ -49,10 +52,11 @@ form {
 
 
 #valider{
+    left:0px;
+    top:-30px;
     grid-area:val;
     width:120px;
     position: relative;
-    left:20%;
     height:45px;
     border:1px solid #BA9FCB;
     border-radius: 10px;
@@ -63,12 +67,11 @@ form {
 }
 
 #annuler{
+    top:-30px;
     grid-area: ann;
     position: relative;
-    left:15%;
+
     display: block;
-    place-self: end;
-    padding-right: 30px;
     button{
         pointer-events: none;
         width:120px;

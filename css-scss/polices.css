@@ -10,10 +10,15 @@ h1 {
 p {
   font-family: 'Raleway', sans-serif;
   display: inline;
+  font-size: 1em;
 }
 
 h2 {
+  padding-top: 10px;
   font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-family: 'Amatic SC', cursive;
+  font-size: 1.5em;
 }
 
 h3 {
@@ -21,7 +26,9 @@ h3 {
 }
 
 h4 {
-  font-family: 'Raleway', sans-serif;
+  display: inline;
+  font-weight: 700;
+  font-family: 'Amatic SC', cursive;
 }
 
 a {

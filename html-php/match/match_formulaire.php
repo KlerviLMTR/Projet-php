@@ -19,6 +19,11 @@ requete_match_formulaire($pdo);
             <?php
                 if (isset($_GET['v1'])){
                     echo'Modifier un match :';
+
+                    $req="select * from match_ where Id_match_ =:id";
+                    $decl = $pdo->prepare($req);
+                    $decl->execute(array('id'=>$_GET['v1']));
+                    $match=$decl->fetchAll();
                 }
                 else{
                         echo 'Ajouter un match : ';
@@ -27,28 +32,34 @@ requete_match_formulaire($pdo);
             ?>
         </h1>
         <hr id="main_sep">
-        <a href="./matchs.php">Lien pour revenir à la feuille des matchs</a>
 
-        <form action="./formulaire.php" enctype="multipart/form-data" method="POST" id="form">
+        <form action="./match_formulaire.php" enctype="multipart/form-data" method="POST" id="form">
 
         <label for="date" id="labD">Date du match :</label>
             <input type="date" id="chD" class="champ" name="date"
                 <?php
-                pr_date_match();
+                if(isset($match)){
+                    pr_date_match($match);
+                }
+                
                 ?>
             >
             <br>
             <label for="heure" id="labH" >Heure du match :</label>
             <input type="time" id="chH" class="champ" name="heure"
                 <?php
-                pr_heure_match();
+                if(isset($match)){
+                pr_heure_match($match);
+                }
                 ?>
             >
             <br>
             <label for="equipe_adverse" id="labE">Equipe adverse :</label>
             <input type="text" id="chE"name="equipe_adverse"class="champ"  maxlength="30"
                 <?php
-                pr_equipe_adverse();
+                if(isset($match)){
+                pr_equipe_adverse($match);
+                }
                 ?>
             >
             <br>
@@ -56,7 +67,9 @@ requete_match_formulaire($pdo);
             <div id="radD">
                 <input type="radio" id="radD" name="lieu_rencontre" value="Domicile"
                     <?php
-                    pr_lieu_match_dom();
+                    if(isset($match)){
+                    pr_lieu_match_dom($match);
+                    }
                     ?>
                 >
                 <label for="Domicile" >Domicile</label>
@@ -65,7 +78,9 @@ requete_match_formulaire($pdo);
             <div id="radE">
                 <input type="radio" name="lieu_rencontre" value="Exterieur"
                     <?php
-                    pr_lieu_match_ext();
+                    if(isset($match)){
+                    pr_lieu_match_ext($match);
+                    }
                     ?>
                 >
                 <label for="Exterieur">Exterieur</label>
@@ -73,7 +88,9 @@ requete_match_formulaire($pdo);
             <br>
             <input type="text" hidden name="Id_match"
                 <?php
-                pr_id_match();
+                if(isset($match)){
+                pr_id_match($match);
+                }
                 ?>
             >
             <a href="./matchs.php" id="annuler">
