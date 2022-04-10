@@ -269,4 +269,13 @@ form label {
   background-color: #d7d0d7;
   border: 2.5px solid #9e2a9e;
 }
+
+#cont_val {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
 /*# sourceMappingURL=form_joueur.css.map */

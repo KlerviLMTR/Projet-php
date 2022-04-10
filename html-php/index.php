@@ -6,53 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tutshill Tornados</title>
     <link rel="stylesheet" href="../css-scss/template.css">
+    <link rel="stylesheet" href="../css-scss/polices.css">
+    <link rel="stylesheet" href="../css-scss/auth.css">
+
+
 </head>
 <body>
 
-    <!-- HEADER -->
-    <!-- <nav>
-        <a href="#" id="lien-logo">
-            <img src="../images-deco/logo.svg" id="logo" alt="logo Tutshill Tornados">
-        </a>
-
-        <div id="nav_cont">
-            <a href="./joueurs/joueurs.php" class ="lien-nav">
-                <img src="../images-deco/people.svg"class="icone" alt="icone joueurs">
-                <p>Joueurs</p>
-            </a>
-
-            <a href="./match/matchs.php" class ="lien-nav">
-                <img src="../images-deco/agenda.svg"class="icone" alt="icone matchs">
-                <p>Matchs</p>
-            </a>
-            <a href="" class ="lien-nav">
-                <img src="../images-deco/leaderboard.svg"class="icone" alt="icone stats">
-                <p>Statistiques</p>
-            </a>
-
-            <a href="" class ="lien-nav">
-                <img src="../images-deco/logout.svg"class="icone" alt="icone logout">
-                <p>Se déconnecter</p>
-            </a>
-        </div>
-
-    </nav> -->
 
     <main>
         <!-- Authentification -->
         <form action='' method='post'>
-        <fieldset>
-            <legend align="left"> Connexion </legend>
-            Identifiant :
-            <input type='text' name ='identifiant' value="">
-            <br>
-            Mot de passe : 
-            <input type='password' name='mdp' value="">
-            <br>
-            <input type='submit' name ='valider' class='button'>
-        </fieldset>
+
+                <div class="flex">
+                    <label for="identifiant">Identifiant :</label>
+                    <input type='text' name ='identifiant' class="champ"value="">
+                </div>
+                <div class="flex">
+                    <label for="mdp">Mot de passe :</label>
+                    <input type='password' name='mdp' class="champ"value="">
+                </div>
+                <div id="cont_val">
+                <input type='submit' name ='valider' class='valider'>
+                </div>
     </form>
-    </main>
+   
    
     <?php
 
@@ -77,12 +55,12 @@
                 $_SESSION['connecte'] = "oui";
                 header("location:./joueurs/joueurs.php"); 
             } else {
-                $erreur = "Mauvais identifiant ou mot de passe.";
+                $erreur = "<h2>Mauvais identifiant ou mot de passe.</h2>";
                 echo $erreur;
             }
         }
         ?>
-
+         </main>
 </body>
 </html>
 
