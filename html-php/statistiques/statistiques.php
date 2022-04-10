@@ -117,8 +117,8 @@ include_once('../joueurs/fonctions_joueur.php');
          foreach ($resJoueur as $joueur) {
 
 
-            echo '
-            <div class="grille">
+        echo '
+        <div class="grille">
             <div class="img" >
                 <img src="'.$joueur["chemin_photo"].'" width="150px" height="200px" alt="">
                 <img src="../../images-deco/attribution-requise/SS/Cadre-photo.svg" alt="Cadre portrait" height="210px" id="cadre_portrait">
