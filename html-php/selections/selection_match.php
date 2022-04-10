@@ -41,7 +41,7 @@
 
             <?php 
             if($_SERVER['HTTP_REFERER'] == 'http://localhost'.$_SERVER['REQUEST_URI'] || $_SERVER['HTTP_REFERER'] == 'https://localhost'.$_SERVER['REQUEST_URI']){
-                echo '<p>La sélection entrée n\'est pas valide ! Veuillez respecter les instructions ci-dessous</p>';
+                echo '<p id="msgerr">La sélection entrée n\'est pas valide ! Veuillez respecter le format spécifié ci-dessous.</p>';
             }
             ?>
             
@@ -80,10 +80,19 @@
                 </div>
                 
                 <input type="text" name="idmatch" hidden <?php echo 'value="' . $_GET['idmatch'] . '"' ?> id="">
-                <input type="submit" value="valider la sélection">
+
+                <div id="btn">
+                    <a href="../match/matchs.php" id="annuler">
+                                <button>Annuler</button>
+                    </a>
+                    <input type="submit" id="valider" value="Enregistrer">
+                </div>
             </form>
         </main>
     </div>
+        <?php
+        include_once("../footer.php");
+        ?>
     </body>
 
     </html>

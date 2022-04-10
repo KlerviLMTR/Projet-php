@@ -9,7 +9,7 @@
     "img taille note"
     "img poids titularisation"
     "comm comm comm";
-    padding: 28px;
+    padding: 20px;
 
     p{
         font-size: 0.8em;
@@ -20,7 +20,11 @@
     }
 }
 
-.img{
+.img{   
+
+    position: relative;
+    left:-7px;
+
     grid-area:img;
     #cadre_portrait{
         left: -5px;
@@ -31,7 +35,7 @@
     }
 }
 select{
-    width: 100px;
+    width: 90px;
     top:0;
 }
 
@@ -58,8 +62,8 @@ select{
     justify-self: start; 
     grid-area:titularisation;
     select{
-        font-size: 0.8em;
-        width:95px;
+        font-size: 0.7em;
+        width:82px;
     }
 }
 .note{
@@ -96,6 +100,7 @@ h2{
     position: relative;
     text-align: center;
     font-size: 2em;
+    margin-top: 15px;
     margin-bottom: 30px;
 }
 
@@ -105,3 +110,56 @@ h2{
     font-size: 1em;
 }
 
+#btn{
+    position: relative;
+    width: 90%;
+    left:5%;
+    display: flex;
+    justify-content: center;
+}
+
+#valider{
+    width:120px;
+    position: relative;
+        z-index: 3;
+    height:45px;
+    border:1px solid #BA9FCB;
+    border-radius: 10px;
+    background-color:#9673ab ;
+    color:white;
+    cursor: pointer;
+    box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.299);
+}
+
+#annuler{
+
+    position: relative;
+    z-index: 3;
+
+    display: inline;
+    place-self: end;
+    padding-right: 30px;
+    button{
+        pointer-events: none;
+
+        width:120px;
+        height:45px;
+        border:1px solid rgb(164, 163, 165);
+        border-radius: 10px;
+        background-color:#b7b4b8 ;
+        color:white;
+        cursor: pointer;
+        box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.299);
+    }
+}
+
+#msgerr{
+    position: relative;
+    width:90%;
+    color: rgb(188, 83, 83);
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+}

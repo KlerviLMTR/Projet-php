@@ -100,7 +100,7 @@ if(!empty($resSelection)){
             echo '
             <div class="note">
                 <form action="voir_selection_match?idmatch='.$resSelection['0']['12'].'" method="post">
-                    <label for"note">Note</label>
+                    <label for"note">Note :</label>
                     <select name="note_joueur"> 
                         <option value="" disabled selected>'.$rs['performance'].'</option>
                         <option value="1">1</option>
@@ -120,12 +120,21 @@ if(!empty($resSelection)){
     }
 }
 else{
-    echo '<h2>Pas de sélection pour ce match !</h4>';
+    echo '<h2 id="null">Pas de sélection pour ce match !</h2>
+';
 }
 
-
-
-
 ?>
+    <div id="btn">
+    <a href="../match/matchs.php" id="annuler">
+    <button>Retour</button>
+    </div>
+    </a>
 </main>
 </div>
+<?php
+    include_once("../footer.php");
+?>
+
+</body>
+</html>
