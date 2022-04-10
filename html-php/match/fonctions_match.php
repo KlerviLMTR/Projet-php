@@ -76,15 +76,9 @@
     
                 $decl = $pdo -> prepare($sql);
                 $decl -> execute($donnees);
-                $res = $decl -> fetchall();
                 
-                echo $_POST['date'];
-                echo $_POST['heure'];
+                header('Location: matchs.php');
     
-    
-                foreach($res as $ligne){
-                    echo 'coucou';
-                }
     
             }
         }

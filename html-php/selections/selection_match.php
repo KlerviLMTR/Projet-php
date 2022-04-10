@@ -36,23 +36,37 @@
         <main>
             <form action="./validation_selection.php" method="POST">
 
-
+            
                 <h2>SELECTIONNEZ LES GARDIENS (1 de chaque)</h2>
+                <div class="cont_cartes">
                 <?php
                 selection_gardien($gardiens);
                 ?>
+                </div>
+
+                
                 <h2>SELECTIONNEZ LES BATTEURS (2 de chaque)</h2>
+                <div class="cont_cartes">
                 <?php
                 selection_batteur($batteurs);
                 ?>
+                </div>
+                
+                
                 <h2>SELECTIONNEZ LES POURSUIVEURS (3 de chaque)</h2>
+                <div class="cont_cartes">
                 <?php
                 selection_poursuiveur($poursuiveurs);
-                ?>
+                ?> 
+                </div>
+                
                 <h2>SELECTIONNEZ LES ATTRAPEURS (1 de chaque)</h2>
+                <div class="cont_cartes">
                 <?php
                 selection_attrapeur($attrapeurs);
                 ?>
+                </div>
+                
                 <input type="text" name="idmatch" hidden <?php echo 'value="' . $_GET['idmatch'] . '"' ?> id="">
                 <input type="submit" value="valider la sélection">
             </form>

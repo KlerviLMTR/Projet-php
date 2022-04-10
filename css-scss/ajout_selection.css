@@ -9,11 +9,6 @@
   padding-bottom: 20px;
 }
 
-h2 {
-  display: block;
-  width: 100%;
-}
-
 .img {
   -ms-grid-row: 3;
   -ms-grid-row-span: 2;
@@ -69,5 +64,17 @@ select {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: poste;
+}
+
+.cont_cartes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 90%;
 }
 /*# sourceMappingURL=ajout_selection.css.map */

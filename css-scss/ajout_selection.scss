@@ -12,10 +12,6 @@
     padding-bottom: 20px;
 }
 
-h2{
-    display: block;
-    width: 100%;
-}
 .img{
     grid-area:img;
     #cadre_portrait{
@@ -50,4 +46,13 @@ select{
 }
 .poste{
     grid-area: poste;
+}
+
+.cont_cartes{
+    // position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    width: 90%;
 }
