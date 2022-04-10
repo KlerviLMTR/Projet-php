@@ -1,87 +1,66 @@
 <?php
-    function pr_nom(){
-        if( isset($_GET["v2"])){
-            echo 'value ="'.$_GET["v2"].'"';
-        }
+    function pr_nom($joueur){
+            echo 'value ="'.$joueur['0']['1'].'"';
     }
 
-    function pr_prenom(){
-        if( isset($_GET["v3"])){
-            echo 'value ="'.$_GET["v3"].'"';
-        }
+    function pr_prenom($joueur){
+            echo 'value ="'.$joueur['0']['2'].'"';
     }
 
-    function pr_licence(){
-        if( isset($_GET["v4"])){
-            echo 'value ="'.$_GET["v4"].'"';
-        }
+    function pr_licence($joueur){
+            echo 'value ="'.$joueur['0']['3'].'"';
+        
     }
 
-    function pr_dateN(){
-        if( isset($_GET["v5"])){
-            echo 'value ="'.$_GET["v5"].'"';
-        }
+    function pr_dateN($joueur){
+            echo 'value ="'.$joueur['0']['4'].'"';
     }
 
     
-    function pr_photo(){
-        if( isset($_GET["v6"])){
-            echo 'value ="'.$_GET["v6"].'"';
-        }
+    function pr_photo($joueur){
+            echo ''.$joueur['0']['5'].'';
     }
 
     
-    function pr_taille(){
-        if( isset($_GET["v7"])){
-            echo 'value ="'.$_GET["v7"].'"';
-        }
+    function pr_taille($joueur){
+            echo 'value ="'.$joueur['0']['6'].'"';
     }
 
     
-    function pr_poids(){
-        if( isset($_GET["v8"])){
-            $v8=substr($_GET["v8"],0,-2);
+    function pr_poids($joueur){
+            $v8=substr($joueur['0']['7'],0,-2);
             echo 'value ="'.$v8.'"';
-        }
     }
 
     
-    function pr_poste_att(){
-        if( isset($_GET["v9"])){
-            if(($_GET["v9"])=="Attrapeur"){
+    function pr_poste_att($joueur){
+            if(($joueur['0']['8'])=="Attrapeur"){
                 echo 'checked';
-            }
         }
     }
 
-    function pr_poste_pours(){
-        if( isset($_GET["v9"])){
-            if(($_GET["v9"])=="Poursuiveur"){
+    function pr_poste_pours($joueur){
+            if(($joueur['0']['8'])=="Poursuiveur"){
                 echo 'checked';
             }
-        }
+        
     }
 
-    function pr_poste_batt(){
-        if( isset($_GET["v9"])){
-            if(($_GET["v9"])=="Batteur"){
+    function pr_poste_batt($joueur){
+            if(($joueur['0']['8'])=="Batteur"){
                 echo 'checked';
             }
-        }
     }
 
-    function pr_poste_gard(){
-        if( isset($_GET["v9"])){
-            if(($_GET["v9"])=="Gardien"){
+    function pr_poste_gard($joueur){
+            if(($joueur['0']['8'])=="Gardien"){
                 echo 'checked';
             }
-        }
+        
     }
 
-    function pr_id(){
-        if( isset($_GET["v1"])){
-            echo 'value ="'.$_GET["v1"].'"';
-        }
+    function pr_id($joueur){
+            echo 'value ="'.$joueur['0']['0'].'"';
     }
 
     

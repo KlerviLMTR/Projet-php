@@ -70,8 +70,7 @@
             </div>  
             
             <div class="footer">
-                <a href="../ajout_modif/formulaire.php?v1='.$joueur["Id_joueur"].'&v2='.$joueur["nom"].'&v3='.$joueur["prenom"].'&v4='.$joueur["numero_licence"].'&v5='.$joueur["date_naissance"].'&v6='.$joueur["chemin_photo"].'&v7='.$joueur["taille"].'&v8='.$joueur["poids"].'&v9='.$joueur["poste_prefere"].'
-                ">✎</a>
+                <a href="../ajout_modif/formulaire.php?v1='.$joueur["Id_joueur"].'">✎</a>
                 <a href="./joueurs.php?idsupp='.$joueur["Id_joueur"].'">🗑</a>
             </div>
         </div>';

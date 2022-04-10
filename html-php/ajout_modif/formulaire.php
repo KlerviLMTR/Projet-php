@@ -23,6 +23,10 @@
             <?php
                 if (isset($_GET['v1'])){
                     echo '<h1>Modifier un joueur :</h1>';
+
+                    $prep=$pdo->prepare('select * from joueur where Id_joueur=:id');
+                    $prep->execute(array('id'=>$_GET['v1']));
+                    $joueur=$prep->fetchAll();
                 }
                 else{
                     echo '<h1>Ajouter un joueur : </h1>';
@@ -36,7 +40,7 @@
                     <label for="nom" id="labN">Nom :</label>
                     <input class="champ" type="text" name="nom" id="chN" minlength="2" maxlength ="50" 
                     <?php
-                        pr_nom();
+                    if(isset($joueur)) pr_nom($joueur);
                     ?>
                     >
 
@@ -44,7 +48,7 @@
                     <label for="prenom" id="labPr">Prénom :</label>
                     <input class="champ" type="text" name="prenom" id="chPr"  minlenght="2" maxlength="50"
                     <?php
-                        pr_prenom();
+                    if(isset($joueur))    pr_prenom($joueur);
                     ?>
                     >
                 
@@ -54,14 +58,14 @@
                     <input class="champ" type="tel" name="licence" maxlength="8"  id="chL" minlength="8" pattern="^[0-9]{8,8}$"
                     title="Merci d'ajouter un numéro de licence composé de 8 chiffres"
                     <?php
-                        pr_licence(); 
+                    if(isset($joueur))    pr_licence($joueur); 
                     ?>
                     >
                 
 
                     <label for="dateN" id="labD">Date de naissance :</label>
                     <input class="champ" input type="date" name="dateN" id="chD"
-                     <?php   pr_dateN();
+                     <?php if(isset($joueur))   pr_dateN($joueur);
                     ?>>
                     
                 
@@ -70,7 +74,7 @@
                     <input class="champ" type="tel" name="taille" id="chT" minlength="2" maxlength="3" pattern="^[0-9]{2,3}$"
                     title="taille en cm entre 2 et 3 chiffres"
                     <?php
-                        pr_taille();
+                    if(isset($joueur))    pr_taille($joueur);
                     ?>
                     >
 
@@ -78,7 +82,7 @@
                     <input class="champ" type="tel" name="poids" id="chP" minlength="2" maxlength="3" pattern="^[0-9]{2,3}$"
                     title="poids en kg entre 2 et 3 chiffres"
                     <?php
-                        pr_poids();
+                    if(isset($joueur))    pr_poids($joueur);
                     ?>
                     >
 
@@ -89,7 +93,7 @@
                             <div id ="radA">
                                 <input type="radio" name="poste" value="Attrapeur"
                                 <?php
-                                    pr_poste_att();
+                                if(isset($joueur))    pr_poste_att($joueur);
                                 ?>
                                 >
                                 <label for="Attrapeur">Attrapeur</label>
@@ -98,7 +102,7 @@
                             <div id ="radP">
                                 <input type="radio" name="poste" id="radP" value="Poursuiveur"
                                 <?php
-                                    pr_poste_pours();
+                                if(isset($joueur))    pr_poste_pours($joueur);
                                 ?>
                                 >
                                 <label for="Poursuiveur" class="poste">Poursuiveur</label>
@@ -107,7 +111,7 @@
                             <div id="radB">
                                 <input type="radio" name="poste" class="poste" value="Batteur"
                                 <?php
-                                    pr_poste_batt();
+                                if(isset($joueur))    pr_poste_batt($joueur);
                                 ?>
                                 >
                                 <label for="Batteur" class="poste">Batteur</label>
@@ -116,7 +120,7 @@
                             <div id="radG">
                                 <input type="radio" name="poste" class="poste" value="Gardien"
                                 <?php
-                                    pr_poste_gard();
+                                if(isset($joueur))    pr_poste_gard($joueur);
                                 ?>
                                 >
                                 <label for="Gardien" class="poste">Gardien</label>
@@ -125,9 +129,9 @@
                     
                     
                         
-                        <?php if(isset($_GET["v6"])){ echo '
+                        <?php if(isset($joueur)){ echo '
                             <label for="image" id="titre_img">Image actuelle :</label>
-                            <img src="' . $_GET["v6"] . '" width="150px" height="200px" id="img" alt="Portrait">
+                            <img src="' . $joueur["0"]["5"] . '" width="150px" height="200px" id="img" alt="Portrait">
                             <label for="image" class="impimg">Importer une nouvelle image :</label>';} 
                             else{
                                 echo '<label for="image" class="impimg">Importer une image :</label>';
@@ -141,7 +145,7 @@
 
                 <input type="text" hidden name="Id_joueur"
                 <?php
-                    pr_id();
+                    pr_id($joueur);
                 ?>
                 >
                 <a href="../joueurs/joueurs.php" id="annuler">
