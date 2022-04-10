@@ -6,9 +6,6 @@ $counta=0;
 $countb=0;
 $countp=0;
 
-// if(empty($_POST['gardiens']) || empty($_POST['attrapeurs']) || empty($_POST['batteurs']) || empty($_POST['poursuiveurs']) ){
-//     header('Location: selection_match.php?idmatch='.$_POST['idmatch']);
-// }
 
 foreach($_POST['gardiens'] as $g){
     if(!empty($g)){
@@ -69,25 +66,9 @@ if($counta !=1 || $countb != 2 || $countg != 1 || $countp != 3){
 }
 
 
-
-
-
-$insert='INSERT INTO participer(Id_joueur, Id_match_, etre_titulaire_o_n_) VALUES
-        (:attrapeurtitu1,:match,"1"),
-        (:batteurtitu1,:match,"1"),
-        (:batteurtitu2,:match,"1"),
-        (:gardientitu,:match,"1"),
-        (:poursuiveurtitu1,:match,"1"),
-        (:poursuiveurtitu2,:match,"1"),
-        (:poursuiveurtitu3,:match,"1"),
-        (:attrapeurremplacant1,:match,"0"),
-        (:batteurremplacant1,:match,"0"),
-        (:batteurremplacant2,:match,"0"),
-        (:gardienremplacant,:match,"0"),
-        (:poursuiveurremplacant1,:match,"0"),
-        (:poursuiveurremplacant2,:match,"0"),
-        (:poursuiveurremplacant3,:match,"0")
-        ;';
+$declverif=$pdo->prepare('select * from participer where Id_match_=:id');
+$declverif->execute(array('id'=>$_POST['idmatch']));
+$verification=$declverif->fetchAll();
 
 $donnees =[
     'attrapeurtitu1' => $attrapeurtitu,
@@ -106,8 +87,47 @@ $donnees =[
     'poursuiveurremplacant3' =>  $poursrempl[2],
     'match' => $_POST['idmatch']
 ];
+
+if(sizeof($verification) == 0){
+    $insert='INSERT INTO participer(Id_joueur, Id_match_, etre_titulaire_o_n_) VALUES
+        (:attrapeurtitu1,:match,"1"),
+        (:batteurtitu1,:match,"1"),
+        (:batteurtitu2,:match,"1"),
+        (:gardientitu,:match,"1"),
+        (:poursuiveurtitu1,:match,"1"),
+        (:poursuiveurtitu2,:match,"1"),
+        (:poursuiveurtitu3,:match,"1"),
+        (:attrapeurremplacant1,:match,"0"),
+        (:batteurremplacant1,:match,"0"),
+        (:batteurremplacant2,:match,"0"),
+        (:gardienremplacant,:match,"0"),
+        (:poursuiveurremplacant1,:match,"0"),
+        (:poursuiveurremplacant2,:match,"0"),
+        (:poursuiveurremplacant3,:match,"0")
+        ;';
+}
+else{
+    $insert='DELETE FROM participer WHERE Id_match=:match ; INSERT INTO participer(Id_joueur, Id_match_, etre_titulaire_o_n_) VALUES
+        (:attrapeurtitu1,:match,"1"),
+        (:batteurtitu1,:match,"1"),
+        (:batteurtitu2,:match,"1"),
+        (:gardientitu,:match,"1"),
+        (:poursuiveurtitu1,:match,"1"),
+        (:poursuiveurtitu2,:match,"1"),
+        (:poursuiveurtitu3,:match,"1"),
+        (:attrapeurremplacant1,:match,"0"),
+        (:batteurremplacant1,:match,"0"),
+        (:batteurremplacant2,:match,"0"),
+        (:gardienremplacant,:match,"0"),
+        (:poursuiveurremplacant1,:match,"0"),
+        (:poursuiveurremplacant2,:match,"0"),
+        (:poursuiveurremplacant3,:match,"0")
+        ;';
+}
+
 $decl = $pdo->prepare($insert);
 $decl->execute($donnees);
+
 
 header('Location: ../match/matchs.php');
 

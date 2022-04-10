@@ -8,11 +8,7 @@
     include_once('./fonctions_selection.php');
 
     include_once('../config.php');
-
-    $gardiens = 'SELECT * FROM joueur WHERE poste_prefere="Gardien" AND statut="Actif"';
-    $stmt = $pdo->prepare($gardiens);
-    $stmt->execute();
-    $gardiens = $stmt->fetchAll();
+    
 
     $batteurs = 'SELECT * FROM joueur WHERE poste_prefere="Batteur" AND statut="Actif"';
     $stmt = $pdo->prepare($batteurs);
@@ -48,7 +44,7 @@
                 <h2>1) SELECTIONNEZ LES GARDIENS : (1 titulaire et 1 remplaçant)</h2>
                 <div class="cont_cartes">
                 <?php
-                selection_gardien($gardiens);
+                selection_gardien($pdo);
                 ?>
                 </div>
                 
@@ -57,7 +53,7 @@
                 <h2>2) SELECTIONNEZ LES BATTEURS : (2 titulaires et 2 remplaçants)</h2>
                 <div class="cont_cartes">
                 <?php
-                selection_batteur($batteurs);
+                selection_batteur($pdo);
                 ?>
                 </div>
                 
@@ -66,7 +62,7 @@
                 <h2>3) SELECTIONNEZ LES POURSUIVEURS : (3 titulaires et 3 remplçacants)</h2>
                 <div class="cont_cartes">
                 <?php
-                selection_poursuiveur($poursuiveurs);
+                selection_poursuiveur($pdo);
                 ?> 
                 </div>
 
@@ -75,7 +71,7 @@
                 <h2>4)  SELECTIONNEZ LES ATTRAPEURS : (1 titulaire et 1 remplaçant)</h2>
                 <div class="cont_cartes">
                 <?php
-                selection_attrapeur($attrapeurs);
+                selection_attrapeur($pdo);
                 ?>
                 </div>
                 
