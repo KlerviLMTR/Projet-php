@@ -1,5 +1,7 @@
-<php 
+<?php 
     include_once('../header.php');
+    include_once('../session.php');
+    verification_session();
 
 ?>
     <link rel="stylesheet" href="../../css-scss/template.css">
