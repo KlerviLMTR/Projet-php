@@ -2,22 +2,31 @@
     width: 45%;
     float: left;
     grid-template-columns: 34% 33% 33%;
-    grid-template-rows: 25% 2% 25% 20% 28%;
+    grid-template-rows: 22% 2% 22% 22% 31%;
     grid-template-areas: 
     "poste poste poste"
     "sep sep sep"
     "img taille note"
     "img poids titularisation"
     "comm comm comm";
-    padding-bottom: 20px;
+    padding: 28px;
+
+    p{
+        font-size: 0.8em;
+    }
+
+    .comm{
+        display: block;
+    }
 }
 
 .img{
     grid-area:img;
     #cadre_portrait{
         left: -5px;
-        top:-5px;
-        height: 110px;
+        top: -195px;
+        width: 110px;
+        height: 520px;
 
     }
 }
@@ -28,6 +37,8 @@ select{
 
 .taille{
     grid-area: taille;
+    place-self: end;
+    justify-self: start; 
 }
 .sep_grille{
     grid-area: sep;
@@ -37,12 +48,29 @@ select{
 // }
 .commentaires{
     grid-area: comm;
+    margin-top: 20px;
+    padding: 40px 18px 20px 20px ;
+    text-align: justify;
+}
+
+.titulaire{
+    place-self: end;
+    justify-self: start; 
+    grid-area:titularisation;
+    select{
+        font-size: 0.8em;
+        width:95px;
+    }
 }
 .note{
     grid-area: note;
+    place-self: end;
+    justify-self: start; 
 }
 .poids{
     grid-area: poids;
+    place-self: end;
+    justify-self: start;
 }
 .poste{
     grid-area: poste;
@@ -56,3 +84,24 @@ select{
 
     width: 90%;
 }
+
+.sep{
+    position: relative;
+    width:80%;
+    left:10%;
+    border: 1px solid rgb(206, 192, 208);
+}
+
+h2{
+    position: relative;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+
+
+.titres_carte{
+    font-size: 1em;
+}
+
