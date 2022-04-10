@@ -40,7 +40,8 @@
     
     function pr_poids(){
         if( isset($_GET["v8"])){
-            echo 'value ="'.$_GET["v8"].'"';
+            $v8=substr($_GET["v8"],0,-2);
+            echo 'value ="'.$v8.'"';
         }
     }
 
