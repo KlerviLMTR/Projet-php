@@ -17,6 +17,7 @@
 
 .img{
     grid-area: img;
+
 }
 .num{
     grid-area: num;
@@ -41,10 +42,66 @@
 }
 .note{
     grid-area: note;
+    label{
+        font-size: 1.5em;
+        font-family: 'Amatic SC', cursive;    }
+    select{
+        position: relative;
+        top:-5px;
+        border-radius: 20px;
+        width:100px;
+        height:30px;
+    }
+    .valider{
+        border-radius: 20px;
+
+        top:-5px;
+        left:14px;
+    }
 }
 
 #selection{
     text-align: center;
     font-family: 'Amatic SC', cursive;
     font-size: 1.5em;
+}
+
+
+#null{
+    width:100%;
+    text-align: center;
+    font-size:1.8em;
+    margin-top:150px;
+    margin-bottom:100px;
+}
+
+#annuler{
+
+    position: relative;
+
+    display: inline;
+    place-self: end;
+    margin-top:100px;
+    padding-right: 30px;
+    button{
+        pointer-events: none;
+
+        width:120px;
+        height:45px;
+        border:1px solid rgb(164, 163, 165);
+        border-radius: 10px;
+        background-color:#b7b4b8 ;
+        color:white;
+        cursor: pointer;
+        box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.299);
+    }
+}
+
+#btn{
+    position: relative;
+    width: 90%;
+    left:5%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 120px;
 }

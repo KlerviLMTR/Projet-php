@@ -77,7 +77,7 @@ function selection_attrapeur($attrapeurs){
             <hr class="sep_grille">
 
             <div class="taille">
-                <h4 class="titres_carte comm">Taille :</h4>
+                <h4 class="titres_carte">Taille :</h4>
                 <p>'.$b["taille"].' cm</p>
             </div>
 
