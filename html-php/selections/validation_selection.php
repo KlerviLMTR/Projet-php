@@ -6,7 +6,10 @@ $counta=0;
 $countb=0;
 $countp=0;
 
-var_dump($_POST['gardiens']);
+// if(empty($_POST['gardiens']) || empty($_POST['attrapeurs']) || empty($_POST['batteurs']) || empty($_POST['poursuiveurs']) ){
+//     header('Location: selection_match.php?idmatch='.$_POST['idmatch']);
+// }
+
 foreach($_POST['gardiens'] as $g){
     if(!empty($g)){
         list($id,$place) = explode('|', $g);

@@ -34,33 +34,45 @@
 
 
         <main>
+            <h1>Sélectionner des joueurs :</h1>
+            <hr id="main_sep">
+
             <form action="./validation_selection.php" method="POST">
 
+            <?php 
+            if($_SERVER['HTTP_REFERER'] == 'http://localhost'.$_SERVER['REQUEST_URI'] || $_SERVER['HTTP_REFERER'] == 'https://localhost'.$_SERVER['REQUEST_URI']){
+                echo '<p>La sélection entrée n\'est pas valide ! Veuillez respecter les instructions ci-dessous</p>';
+            }
+            ?>
             
-                <h2>SELECTIONNEZ LES GARDIENS (1 de chaque)</h2>
+                <h2>1) SELECTIONNEZ LES GARDIENS : (1 titulaire et 1 remplaçant)</h2>
                 <div class="cont_cartes">
                 <?php
                 selection_gardien($gardiens);
                 ?>
                 </div>
-
                 
-                <h2>SELECTIONNEZ LES BATTEURS (2 de chaque)</h2>
+                <hr class="sep">
+                
+                <h2>2) SELECTIONNEZ LES BATTEURS : (2 titulaires et 2 remplaçants)</h2>
                 <div class="cont_cartes">
                 <?php
                 selection_batteur($batteurs);
                 ?>
                 </div>
                 
+                <hr class="sep">
                 
-                <h2>SELECTIONNEZ LES POURSUIVEURS (3 de chaque)</h2>
+                <h2>3) SELECTIONNEZ LES POURSUIVEURS : (3 titulaires et 3 remplçacants)</h2>
                 <div class="cont_cartes">
                 <?php
                 selection_poursuiveur($poursuiveurs);
                 ?> 
                 </div>
+
+                <hr class="sep">
                 
-                <h2>SELECTIONNEZ LES ATTRAPEURS (1 de chaque)</h2>
+                <h2>4)  SELECTIONNEZ LES ATTRAPEURS : (1 titulaire et 1 remplaçant)</h2>
                 <div class="cont_cartes">
                 <?php
                 selection_attrapeur($attrapeurs);
