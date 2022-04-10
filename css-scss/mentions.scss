@@ -1,0 +1,23 @@
+
+main{
+    p{
+        margin-top: 150px;
+        display: block;
+        position:relative;
+        width:60%;
+        left:20%;
+        text-align: center;
+    }
+    div{
+        display: flex;
+        justify-content: center;
+    
+        img{
+            
+            width: 250px;
+            margin-top:60px;    
+        }
+    }
+
+  
+}

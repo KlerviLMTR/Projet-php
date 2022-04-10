@@ -1,8 +1,7 @@
 <?php
     echo '
     <footer>
-    <a href="../mentions_leg.html">Mentions légales</a>
-    <a href="../sources.html">Sources des images</a>
-    <a href="../contact.php">Nous contacter</a>
+    <a href="../misc/mentions_leg.php">Mentions légales</a>
+    <a href="../misc/sources.php">Sources des images</a>
     </footer>';
 ?>

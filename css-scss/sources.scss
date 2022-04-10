@@ -1,0 +1,44 @@
+main{
+    h2{
+        text-align: center;
+        font-size: 1.8em;
+    }
+    p{
+        margin-top: 30px;
+        display: block;
+        position:relative;
+        width:60%;
+        left:20%;
+        text-align: center;
+    }
+    #src{
+        position: relative;
+        width: 40%;
+        text-align: center  ;
+        flex-direction: column;
+        left:30%;
+        padding:30px;
+        .flex{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            h4{
+                padding:10px 5px;
+                font-size: 1.8em;
+            }
+    
+            a{ 
+                top:7px;
+                padding: 10px 5px;
+                position: relative  ;
+                font-size: 1.2em;
+            }
+            a:hover{
+                color: rgb(158, 42, 158);
+        }
+
+
+
+        }
+    }
+}

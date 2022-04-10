@@ -1,0 +1,23 @@
+main p {
+  margin-top: 150px;
+  display: block;
+  position: relative;
+  width: 60%;
+  left: 20%;
+  text-align: center;
+}
+
+main div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main div img {
+  width: 250px;
+  margin-top: 60px;
+}
+/*# sourceMappingURL=mentions.css.map */
