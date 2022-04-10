@@ -84,7 +84,7 @@ include_once('../joueurs/fonctions_joueur.php');
     <hr id="main_sep">
     <div id="header">
         <h2>Matchs :</h2><br><br>
-        <h4>- Nombre total de matchs joués :</h4> <p><?php echo $nbMatchs ?>%</p><br>
+        <h4>- Nombre total de matchs joués :</h4> <p><?php echo $nbMatchs ?></p><br>
         <h4>- Gagnés : </h4><p><?php echo round($prctMatchsGagnes,2) ?> %</p><br>
         <h4>- Perdus :</h4><p><?php echo round($prctMatchsPerdus,2) ?> %</p><br>
         <h4>- Nuls : </h4><p><?php echo round($prctMatchsNuls,2) ?> %</p><br><br><br>
@@ -140,7 +140,7 @@ include_once('../joueurs/fonctions_joueur.php');
 
             <div class="dateN">
                 <h4 class="titres_carte">Note moyenne :</h4>
-                <p>'.$joueur['performance'].'/5</p>
+                <p>'.$joueur['performance'].'</p>
             </div>
 
             <div class="num">

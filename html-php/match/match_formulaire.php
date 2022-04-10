@@ -1,4 +1,5 @@
 <?php
+include_once('../session.php');
 include_once('../header.php');
 echo '<link rel="stylesheet" href="../../css-scss/template.css">
 <link rel="stylesheet" href="../../css-scss/polices.css">
