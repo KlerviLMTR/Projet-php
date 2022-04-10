@@ -6,7 +6,7 @@ echo '</head>
 
 <!-- HEADER -->
 <nav>
-        <a href="../index.php" id="lien-logo">
+        <a href="../joueurs/joueurs.php" id="lien-logo">
             <img src="../../images-deco/logo2.svg" id="logo" alt="logo Tutshill Tornados">
         </a>
 
